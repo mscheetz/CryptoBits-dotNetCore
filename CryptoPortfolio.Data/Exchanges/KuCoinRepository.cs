@@ -22,8 +22,6 @@ namespace CryptoPortfolio.Data
             _restRepo = new RESTRepository();
             baseUrl = "https://api.kucoin.com";
             _apiInfo = new ApiInformation();
-            // apiKey = "5a56b4e452460e1c3cc21a04";
-            // apiSecret = "08910fb3-0048-4443-8e48-04034752d49d";
         }
 
         public bool SetExchangeApi(ApiInformation apiInfo)
