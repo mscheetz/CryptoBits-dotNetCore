@@ -22,8 +22,6 @@ namespace CryptoPortfolio.Data
             _restRepo = new RESTRepository();
             baseUrl = "https://api.coinbase.com";
             _apiInfo = new ApiInformation();
-            // apiKey = "bcYWx4rmiToficPf";
-            // apiSecret = "fsTwmYtpj3Di2rYIpftOWO9JVXBnSDgj";
         }
 
         public bool SetExchangeApi(ApiInformation exchangeApi)
