@@ -15,8 +15,6 @@ namespace CryptoPortfolio.Data
         private IRESTRepository _restRepo;
         private string baseUrl;
         private ApiInformation _apiInfo;
-        //private string apiKey;
-        //private string apiSecret;
 
         public BinanceRepository()
         {
@@ -24,8 +22,6 @@ namespace CryptoPortfolio.Data
             _restRepo = new RESTRepository();
             baseUrl = "https://api.binance.com";
             _apiInfo = new ApiInformation();
-            //apiKey = "oUGH1ZcOB7hx7TMmyBeAEOpP9ROFdlbN81hTAIdxzSpwlDgpEMVQfiq0IL2K1RDm";
-            //apiSecret = "VjnpS6UFjQ0WCUUmuqmMZSVAdY0M1pzCXija072Db3v5QsBn9q0N4OKzbdTuHYUq";
         }
 
         public bool SetExchangeApi(ApiInformation apiInfo)
