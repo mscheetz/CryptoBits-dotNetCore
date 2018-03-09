@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="appconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="appconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.0.0" />
+    <PackageReference Include="Microsoft.NETCore" Version="5.0.0" />
+    <PackageReference Include="MongoDB.Driver.Core" Version="2.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CryptoPortfolio.Business.Entities\CryptoPortfolio.Business.Entities.csproj" />
+    <ProjectReference Include="..\CryptoPortfolio.Data.Interfaces\CryptoPortfolio.Data.Interfaces.csproj" />
+    <ProjectReference Include="..\CryptoPortfolio.Data\CryptoPortfolio.Data.csproj" />
+  </ItemGroup>
+
+</Project>

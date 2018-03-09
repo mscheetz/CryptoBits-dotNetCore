@@ -1,0 +1,6 @@
+{
+  "MongoDbConnection": {
+    "ConnectionString": "mongodb://localhost:27017",
+    "Database": "CryptoPortfolio"
+  }
+}

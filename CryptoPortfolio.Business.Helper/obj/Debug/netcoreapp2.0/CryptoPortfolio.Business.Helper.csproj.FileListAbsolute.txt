@@ -1,0 +1,9 @@
+C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Business.Helper\bin\Debug\netcoreapp2.0\CryptoPortfolio.Business.Helper.deps.json
+C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Business.Helper\bin\Debug\netcoreapp2.0\CryptoPortfolio.Business.Helper.dll
+C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Business.Helper\bin\Debug\netcoreapp2.0\CryptoPortfolio.Business.Helper.pdb
+C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Business.Helper\obj\Debug\netcoreapp2.0\CryptoPortfolio.Business.Helper.csproj.CoreCompileInputs.cache
+C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Business.Helper\obj\Debug\netcoreapp2.0\CryptoPortfolio.Business.Helper.AssemblyInfoInputs.cache
+C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Business.Helper\obj\Debug\netcoreapp2.0\CryptoPortfolio.Business.Helper.AssemblyInfo.cs
+C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Business.Helper\obj\Debug\netcoreapp2.0\CryptoPortfolio.Business.Helper.dll
+C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Business.Helper\obj\Debug\netcoreapp2.0\CryptoPortfolio.Business.Helper.pdb
+C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Business.Helper\obj\Debug\netcoreapp2.0\CryptoPortfolio.Business.Helper.csprojResolveAssemblyReference.cache

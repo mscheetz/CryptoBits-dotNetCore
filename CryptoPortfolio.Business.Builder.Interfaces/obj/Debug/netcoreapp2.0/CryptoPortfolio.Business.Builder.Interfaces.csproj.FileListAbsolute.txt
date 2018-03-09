@@ -1,0 +1,11 @@
+C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Business.Builder.Interfaces\bin\Debug\netcoreapp2.0\CryptoPortfolio.Business.Builder.Interfaces.deps.json
+C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Business.Builder.Interfaces\bin\Debug\netcoreapp2.0\CryptoPortfolio.Business.Builder.Interfaces.dll
+C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Business.Builder.Interfaces\bin\Debug\netcoreapp2.0\CryptoPortfolio.Business.Builder.Interfaces.pdb
+C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Business.Builder.Interfaces\bin\Debug\netcoreapp2.0\CryptoPortfolio.Business.Contracts.dll
+C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Business.Builder.Interfaces\bin\Debug\netcoreapp2.0\CryptoPortfolio.Business.Contracts.pdb
+C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Business.Builder.Interfaces\obj\Debug\netcoreapp2.0\CryptoPortfolio.Business.Builder.Interfaces.csprojResolveAssemblyReference.cache
+C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Business.Builder.Interfaces\obj\Debug\netcoreapp2.0\CryptoPortfolio.Business.Builder.Interfaces.csproj.CoreCompileInputs.cache
+C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Business.Builder.Interfaces\obj\Debug\netcoreapp2.0\CryptoPortfolio.Business.Builder.Interfaces.AssemblyInfoInputs.cache
+C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Business.Builder.Interfaces\obj\Debug\netcoreapp2.0\CryptoPortfolio.Business.Builder.Interfaces.AssemblyInfo.cs
+C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Business.Builder.Interfaces\obj\Debug\netcoreapp2.0\CryptoPortfolio.Business.Builder.Interfaces.dll
+C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Business.Builder.Interfaces\obj\Debug\netcoreapp2.0\CryptoPortfolio.Business.Builder.Interfaces.pdb

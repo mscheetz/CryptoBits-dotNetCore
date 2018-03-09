@@ -1,0 +1,11 @@
+C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Data.Interfaces\bin\Debug\netcoreapp2.0\CryptoPortfolio.Data.Interfaces.deps.json
+C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Data.Interfaces\bin\Debug\netcoreapp2.0\CryptoPortfolio.Data.Interfaces.dll
+C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Data.Interfaces\bin\Debug\netcoreapp2.0\CryptoPortfolio.Data.Interfaces.pdb
+C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Data.Interfaces\bin\Debug\netcoreapp2.0\CryptoPortfolio.Business.Entities.dll
+C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Data.Interfaces\bin\Debug\netcoreapp2.0\CryptoPortfolio.Business.Entities.pdb
+C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Data.Interfaces\obj\Debug\netcoreapp2.0\CryptoPortfolio.Data.Interfaces.csprojResolveAssemblyReference.cache
+C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Data.Interfaces\obj\Debug\netcoreapp2.0\CryptoPortfolio.Data.Interfaces.csproj.CoreCompileInputs.cache
+C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Data.Interfaces\obj\Debug\netcoreapp2.0\CryptoPortfolio.Data.Interfaces.AssemblyInfoInputs.cache
+C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Data.Interfaces\obj\Debug\netcoreapp2.0\CryptoPortfolio.Data.Interfaces.AssemblyInfo.cs
+C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Data.Interfaces\obj\Debug\netcoreapp2.0\CryptoPortfolio.Data.Interfaces.dll
+C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Data.Interfaces\obj\Debug\netcoreapp2.0\CryptoPortfolio.Data.Interfaces.pdb

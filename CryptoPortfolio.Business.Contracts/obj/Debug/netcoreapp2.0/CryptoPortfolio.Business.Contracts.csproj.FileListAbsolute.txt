@@ -1,0 +1,9 @@
+C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Business.Contracts\bin\Debug\netcoreapp2.0\CryptoPortfolio.Business.Contracts.deps.json
+C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Business.Contracts\bin\Debug\netcoreapp2.0\CryptoPortfolio.Business.Contracts.dll
+C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Business.Contracts\bin\Debug\netcoreapp2.0\CryptoPortfolio.Business.Contracts.pdb
+C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Business.Contracts\obj\Debug\netcoreapp2.0\CryptoPortfolio.Business.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Business.Contracts\obj\Debug\netcoreapp2.0\CryptoPortfolio.Business.Contracts.AssemblyInfoInputs.cache
+C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Business.Contracts\obj\Debug\netcoreapp2.0\CryptoPortfolio.Business.Contracts.AssemblyInfo.cs
+C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Business.Contracts\obj\Debug\netcoreapp2.0\CryptoPortfolio.Business.Contracts.dll
+C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Business.Contracts\obj\Debug\netcoreapp2.0\CryptoPortfolio.Business.Contracts.pdb
+C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Business.Contracts\obj\Debug\netcoreapp2.0\CryptoPortfolio.Business.Contracts.csprojResolveAssemblyReference.cache

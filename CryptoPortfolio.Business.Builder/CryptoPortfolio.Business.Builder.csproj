@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="6.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CryptoPortfolio.Business.Builder.Interfaces\CryptoPortfolio.Business.Builder.Interfaces.csproj" />
+    <ProjectReference Include="..\CryptoPortfolio.Business.Contracts\CryptoPortfolio.Business.Contracts.csproj" />
+    <ProjectReference Include="..\CryptoPortfolio.Data.Interfaces\CryptoPortfolio.Data.Interfaces.csproj" />
+    <ProjectReference Include="..\CryptoPortfolio.Data\CryptoPortfolio.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.Extensions.Options">
+      <HintPath>..\..\..\..\..\..\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.options\2.0.0\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
