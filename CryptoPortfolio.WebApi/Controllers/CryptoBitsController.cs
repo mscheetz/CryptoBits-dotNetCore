@@ -8,6 +8,10 @@ using Microsoft.AspNetCore.Mvc;
 using CryptoPortfolio.Business.Builder.Interfaces.Sources;
 using CryptoPortfolio.Business.Builder.Sources;
 using CryptoPortfolio.Business.Contracts.Sources;
+using CryptoPortfolio.Business.Builder.Interfaces.CryptoPortfolio;
+using CryptoPortfolio.Business.Builder.CryptoPortfolio;
+using Microsoft.Extensions.Options;
+using CryptoPortfolio.Business.Entities.Crypto;
 
 namespace CryptoPortfolio.WebApi.Controllers
 {
@@ -17,40 +21,44 @@ namespace CryptoPortfolio.WebApi.Controllers
     {
         private INinetyNineCryptoBuilder _nnBldr;
         private ICoinMarketCapBuilder _cmcBldr;
+        private ITransactionBuilder _trxBldr;
 
-        public CryptoBitsController()
+        public CryptoBitsController(ITransactionBuilder trxBuilder)
         {
             this._nnBldr = new NinetyNineCryptoBuilder();
             this._cmcBldr = new CoinMarketCapBuilder();
+            this._trxBldr = trxBuilder;
         }
 
-        // GET: api/CryptoBits
+        // GET: api/cryptobits
         [HttpGet]
         public IEnumerable<Coin> GetCoins()
         {
             return this._nnBldr.GetAllCoins();
         }
 
+        // GET: api/cryptobits/cmc
         [HttpGet("cmc")]
         public IEnumerable<CMCCoin> GetCMCCoins()
         {
             return this._cmcBldr.GetCoins();
         }
 
-        // GET: api/CryptoBits/bitcoin
+        // GET: api/cryptobits/bitcoin
         [HttpGet("{name}", Name = "Get")]
         public CMCCoin GetCMCCoin(string name)
         {
             return this._cmcBldr.GetCoin(name);
         }
-        
-        // POST: api/CryptoBits
-        [HttpPost]
-        public void Post([FromBody]string value)
+
+        // POST: api/cryptobits/transaction
+        [HttpPost("transaction")]
+        public void Post([FromBody]Business.Contracts.CryptoBits.Transaction transaction)
         {
+            this._trxBldr.AddTransaction(transaction);
         }
-        
-        // PUT: api/CryptoBits/5
+
+        // PUT: api/cryptobits/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody]string value)
         {

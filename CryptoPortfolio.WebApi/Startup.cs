@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CryptoPortfolio.Business.Builder.Mapping;
+using CryptoPortfolio.Business.Entities.Crypto;
+using CryptoPortfolio.Data;
+using CryptoPortfolio.Data.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -28,13 +31,24 @@ namespace CryptoPortfolio.WebApi
         {
             services.AddMvc();
 
+            services.Configure<MongoDbSettings>(options =>
+            {
+                options.connectionString
+                    = Configuration.GetSection("MongoDbConnection:ConnectionString").Value;
+                options.database
+                    = Configuration.GetSection("MongoDbConnection:Database").Value;
+            });
+            services.AddTransient<IBalanceRepository, BalanceRepository>();
+            services.AddTransient<ICryptoValueRepository, CryptoValueRepository>();
+            services.AddTransient<ITransactionRepository, TransactionRepository>();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info
                 {
                     Title = "CrytpoBits API",
                     Description = "RESTful API endpoints for CryptoBits",
-                    Contact = new Contact { Name = "Matt Scheetz", Email = "mfscheetz@gmail.com" },
+                    Contact = new Contact { Name = "Matt Scheetz", Email = "mfscheetz@gmail.com", Url = "https://twitter.com/CryptoBitfolio" },
                     Version = "1.0"
                 });
             });
