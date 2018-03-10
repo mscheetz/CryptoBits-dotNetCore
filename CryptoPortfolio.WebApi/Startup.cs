@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace CryptoPortfolio.WebApi
 {
@@ -26,6 +27,17 @@ namespace CryptoPortfolio.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info
+                {
+                    Title = "CrytpoBits API",
+                    Description = "RESTful API endpoints for CryptoBits",
+                    Contact = new Contact { Name = "Matt Scheetz", Email = "mfscheetz@gmail.com" },
+                    Version = "1.0"
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -35,6 +47,13 @@ namespace CryptoPortfolio.WebApi
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "CryptoBits API V1");
+            });
 
             app.UseMvc();
         }

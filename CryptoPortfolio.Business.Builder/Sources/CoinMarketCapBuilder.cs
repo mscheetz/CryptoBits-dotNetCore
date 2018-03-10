@@ -21,6 +21,13 @@ namespace CryptoPortfolio.Business.Builder.Sources
             this._helper = new ObjectHelper();
         }
 
+        public IEnumerable<CMCCoin> GetCoins()
+        {
+            var coinEntityList = _repo.GetCoins().Result;
+
+            return GetContractList(coinEntityList);
+        }
+
         public CMCCoin GetCoin(string name)
         {
             var coinEntity = _repo.GetCoin(name).Result;
@@ -30,7 +37,12 @@ namespace CryptoPortfolio.Business.Builder.Sources
 
         private CMCCoin GetContract(Entities.CoinMarketCap.Coin entity)
         {
-            return this._helper.CreateContract<Entities.CoinMarketCap.Coin, CMCCoin>(entity);            
+            return this._helper.CreateContract<Entities.CoinMarketCap.Coin, CMCCoin>(entity);
+        }
+
+        private List<CMCCoin> GetContractList(IEnumerable<Entities.CoinMarketCap.Coin> entityList)
+        {
+            return this._helper.CreateContract<IEnumerable<Entities.CoinMarketCap.Coin>, List<CMCCoin>>(entityList);
         }
     }
 }

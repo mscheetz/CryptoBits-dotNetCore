@@ -31,9 +31,15 @@ namespace CryptoPortfolio.WebApi.Controllers
             return this._nnBldr.GetAllCoins();
         }
 
+        [HttpGet("cmc")]
+        public IEnumerable<CMCCoin> GetCMCCoins()
+        {
+            return this._cmcBldr.GetCoins();
+        }
+
         // GET: api/CryptoBits/bitcoin
         [HttpGet("{name}", Name = "Get")]
-        public CMCCoin Get(string name)
+        public CMCCoin GetCMCCoin(string name)
         {
             return this._cmcBldr.GetCoin(name);
         }
