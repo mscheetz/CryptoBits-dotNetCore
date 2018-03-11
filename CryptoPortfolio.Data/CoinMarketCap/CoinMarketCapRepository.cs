@@ -20,6 +20,10 @@ namespace CryptoPortfolio.Data.CoinMarketCap
             baseUrl = "https://api.coinmarketcap.com";
         }
 
+        /// <summary>
+        /// Gets all coin tickers
+        /// </summary>
+        /// <returns>Collection of Coin</returns>
         public async Task<IEnumerable<Coin>> GetCoins()
         {
             var url = baseUrl + $"/v1/ticker/?limit=0";
@@ -29,6 +33,11 @@ namespace CryptoPortfolio.Data.CoinMarketCap
             return response;
         }
 
+        /// <summary>
+        /// Gets coin ticker
+        /// </summary>
+        /// <param name="name">String of coin name</param>
+        /// <returns>Coin object</returns>
         public async Task<Coin> GetCoin(string name)
         {
             var url = baseUrl + $"/v1/ticker/{name}";

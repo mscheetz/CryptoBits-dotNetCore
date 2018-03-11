@@ -20,14 +20,16 @@ namespace CryptoPortfolio.WebApi.Controllers
     public class CryptoBitsController : Controller
     {
         private INinetyNineCryptoBuilder _nnBldr;
+        private ICoindarBuilder _coindarBldr;
         private ICoinMarketCapBuilder _cmcBldr;
-        private ITransactionBuilder _trxBldr;
+        //private ITransactionBuilder _trxBldr;
 
-        public CryptoBitsController(ITransactionBuilder trxBuilder)
+        public CryptoBitsController()//ITransactionBuilder trxBuilder)
         {
             this._nnBldr = new NinetyNineCryptoBuilder();
+            this._coindarBldr = new CoindarBuilder();
             this._cmcBldr = new CoinMarketCapBuilder();
-            this._trxBldr = trxBuilder;
+            //this._trxBldr = trxBuilder;
         }
 
         // GET: api/cryptobits
@@ -55,7 +57,13 @@ namespace CryptoPortfolio.WebApi.Controllers
         [HttpPost("transaction")]
         public void Post([FromBody]Business.Contracts.CryptoBits.Transaction transaction)
         {
-            this._trxBldr.AddTransaction(transaction);
+            //this._trxBldr.AddTransaction(transaction);
+        }
+
+        [HttpGet("events/{name}")]
+        public IEnumerable<Event> GetEvents(string name)
+        {
+            return this._coindarBldr.GetEvents(name);
         }
 
         // PUT: api/cryptobits/5

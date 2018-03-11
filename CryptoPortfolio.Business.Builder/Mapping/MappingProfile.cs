@@ -26,6 +26,14 @@ namespace CryptoPortfolio.Business.Builder.Mapping
                 .ForMember(e => e.symbol, map => map.MapFrom(c => c.symbol))
                 .ForMember(e => e.total_supply, map => map.MapFrom(c => c.total_supply));
 
+            CreateMap<Entities.Coindar.CalendarItem, Event>()
+                .ForMember(e => e.caption, map => map.MapFrom(c => c.caption))
+                .ForMember(e => e.coinName, map => map.MapFrom(c => c.coin_name))
+                .ForMember(e => e.coinSymbol, map => map.MapFrom(c => c.coin_symbol))
+                .ForMember(e => e.endDate, map => map.MapFrom(c => c.end_date))
+                .ForMember(e => e.proof, map => map.MapFrom(c => c.proof))
+                .ForMember(e => e.publicDate, map => map.MapFrom(c => c.public_date))
+                .ForMember(e => e.startDate, map => map.MapFrom(c => c.start_date));
         }
     }
 }
