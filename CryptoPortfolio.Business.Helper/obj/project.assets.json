@@ -6274,11 +6274,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\mfsch_000\\Source\\Repos\\CryptoPortfolio\\CryptoPortfolio.Business.Helper\\CryptoPortfolio.Business.Helper.csproj",
+      "projectUniqueName": "C:\\Source\\Git\\CryptoBits-dotNetCore\\CryptoPortfolio.Business.Helper\\CryptoPortfolio.Business.Helper.csproj",
       "projectName": "CryptoPortfolio.Business.Helper",
-      "projectPath": "C:\\Users\\mfsch_000\\Source\\Repos\\CryptoPortfolio\\CryptoPortfolio.Business.Helper\\CryptoPortfolio.Business.Helper.csproj",
+      "projectPath": "C:\\Source\\Git\\CryptoBits-dotNetCore\\CryptoPortfolio.Business.Helper\\CryptoPortfolio.Business.Helper.csproj",
       "packagesPath": "C:\\Users\\mfsch_000\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mfsch_000\\Source\\Repos\\CryptoPortfolio\\CryptoPortfolio.Business.Helper\\obj\\",
+      "outputPath": "C:\\Source\\Git\\CryptoBits-dotNetCore\\CryptoPortfolio.Business.Helper\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

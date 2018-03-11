@@ -673,11 +673,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\mfsch_000\\Source\\Repos\\CryptoPortfolio\\CryptoPortfolio.Business.Contracts\\CryptoPortfolio.Business.Contracts.csproj",
+      "projectUniqueName": "C:\\Source\\Git\\CryptoBits-dotNetCore\\CryptoPortfolio.Business.Contracts\\CryptoPortfolio.Business.Contracts.csproj",
       "projectName": "CryptoPortfolio.Business.Contracts",
-      "projectPath": "C:\\Users\\mfsch_000\\Source\\Repos\\CryptoPortfolio\\CryptoPortfolio.Business.Contracts\\CryptoPortfolio.Business.Contracts.csproj",
+      "projectPath": "C:\\Source\\Git\\CryptoBits-dotNetCore\\CryptoPortfolio.Business.Contracts\\CryptoPortfolio.Business.Contracts.csproj",
       "packagesPath": "C:\\Users\\mfsch_000\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mfsch_000\\Source\\Repos\\CryptoPortfolio\\CryptoPortfolio.Business.Contracts\\obj\\",
+      "outputPath": "C:\\Source\\Git\\CryptoBits-dotNetCore\\CryptoPortfolio.Business.Contracts\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

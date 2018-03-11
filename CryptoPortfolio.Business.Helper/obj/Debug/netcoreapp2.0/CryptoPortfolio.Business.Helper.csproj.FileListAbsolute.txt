@@ -7,3 +7,12 @@ C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Business.Helper\
 C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Business.Helper\obj\Debug\netcoreapp2.0\CryptoPortfolio.Business.Helper.dll
 C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Business.Helper\obj\Debug\netcoreapp2.0\CryptoPortfolio.Business.Helper.pdb
 C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Business.Helper\obj\Debug\netcoreapp2.0\CryptoPortfolio.Business.Helper.csprojResolveAssemblyReference.cache
+C:\Source\Git\CryptoBits-dotNetCore\CryptoPortfolio.Business.Helper\bin\Debug\netcoreapp2.0\CryptoPortfolio.Business.Helper.deps.json
+C:\Source\Git\CryptoBits-dotNetCore\CryptoPortfolio.Business.Helper\bin\Debug\netcoreapp2.0\CryptoPortfolio.Business.Helper.dll
+C:\Source\Git\CryptoBits-dotNetCore\CryptoPortfolio.Business.Helper\bin\Debug\netcoreapp2.0\CryptoPortfolio.Business.Helper.pdb
+C:\Source\Git\CryptoBits-dotNetCore\CryptoPortfolio.Business.Helper\obj\Debug\netcoreapp2.0\CryptoPortfolio.Business.Helper.csprojResolveAssemblyReference.cache
+C:\Source\Git\CryptoBits-dotNetCore\CryptoPortfolio.Business.Helper\obj\Debug\netcoreapp2.0\CryptoPortfolio.Business.Helper.csproj.CoreCompileInputs.cache
+C:\Source\Git\CryptoBits-dotNetCore\CryptoPortfolio.Business.Helper\obj\Debug\netcoreapp2.0\CryptoPortfolio.Business.Helper.AssemblyInfoInputs.cache
+C:\Source\Git\CryptoBits-dotNetCore\CryptoPortfolio.Business.Helper\obj\Debug\netcoreapp2.0\CryptoPortfolio.Business.Helper.AssemblyInfo.cs
+C:\Source\Git\CryptoBits-dotNetCore\CryptoPortfolio.Business.Helper\obj\Debug\netcoreapp2.0\CryptoPortfolio.Business.Helper.dll
+C:\Source\Git\CryptoBits-dotNetCore\CryptoPortfolio.Business.Helper\obj\Debug\netcoreapp2.0\CryptoPortfolio.Business.Helper.pdb

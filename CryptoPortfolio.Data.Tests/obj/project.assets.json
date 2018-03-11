@@ -8469,11 +8469,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\mfsch_000\\Source\\Repos\\CryptoPortfolio\\CryptoPortfolio.Data.Tests\\CryptoPortfolio.Data.Tests.csproj",
+      "projectUniqueName": "C:\\Source\\Git\\CryptoBits-dotNetCore\\CryptoPortfolio.Data.Tests\\CryptoPortfolio.Data.Tests.csproj",
       "projectName": "CryptoPortfolio.Data.Tests",
-      "projectPath": "C:\\Users\\mfsch_000\\Source\\Repos\\CryptoPortfolio\\CryptoPortfolio.Data.Tests\\CryptoPortfolio.Data.Tests.csproj",
+      "projectPath": "C:\\Source\\Git\\CryptoBits-dotNetCore\\CryptoPortfolio.Data.Tests\\CryptoPortfolio.Data.Tests.csproj",
       "packagesPath": "C:\\Users\\mfsch_000\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mfsch_000\\Source\\Repos\\CryptoPortfolio\\CryptoPortfolio.Data.Tests\\obj\\",
+      "outputPath": "C:\\Source\\Git\\CryptoBits-dotNetCore\\CryptoPortfolio.Data.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -8492,11 +8492,11 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Users\\mfsch_000\\Source\\Repos\\CryptoPortfolio\\CryptoPortfolio.Data\\CryptoPortfolio.Data.csproj": {
-              "projectPath": "C:\\Users\\mfsch_000\\Source\\Repos\\CryptoPortfolio\\CryptoPortfolio.Data\\CryptoPortfolio.Data.csproj"
+            "C:\\Source\\Git\\CryptoBits-dotNetCore\\CryptoPortfolio.Data\\CryptoPortfolio.Data.csproj": {
+              "projectPath": "C:\\Source\\Git\\CryptoBits-dotNetCore\\CryptoPortfolio.Data\\CryptoPortfolio.Data.csproj"
             },
-            "C:\\Users\\mfsch_000\\Source\\Repos\\CryptoPortfolio\\CryptoPortfolio.Data.Interfaces\\CryptoPortfolio.Data.Interfaces.csproj": {
-              "projectPath": "C:\\Users\\mfsch_000\\Source\\Repos\\CryptoPortfolio\\CryptoPortfolio.Data.Interfaces\\CryptoPortfolio.Data.Interfaces.csproj"
+            "C:\\Source\\Git\\CryptoBits-dotNetCore\\CryptoPortfolio.Data.Interfaces\\CryptoPortfolio.Data.Interfaces.csproj": {
+              "projectPath": "C:\\Source\\Git\\CryptoBits-dotNetCore\\CryptoPortfolio.Data.Interfaces\\CryptoPortfolio.Data.Interfaces.csproj"
             }
           }
         }

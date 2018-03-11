@@ -7896,11 +7896,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\mfsch_000\\Source\\Repos\\CryptoPortfolio\\CryptoPortfolio.Business.Helper.Tests\\CryptoPortfolio.Business.Helper.Tests.csproj",
+      "projectUniqueName": "C:\\Source\\Git\\CryptoBits-dotNetCore\\CryptoPortfolio.Business.Helper.Tests\\CryptoPortfolio.Business.Helper.Tests.csproj",
       "projectName": "CryptoPortfolio.Business.Helper.Tests",
-      "projectPath": "C:\\Users\\mfsch_000\\Source\\Repos\\CryptoPortfolio\\CryptoPortfolio.Business.Helper.Tests\\CryptoPortfolio.Business.Helper.Tests.csproj",
+      "projectPath": "C:\\Source\\Git\\CryptoBits-dotNetCore\\CryptoPortfolio.Business.Helper.Tests\\CryptoPortfolio.Business.Helper.Tests.csproj",
       "packagesPath": "C:\\Users\\mfsch_000\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mfsch_000\\Source\\Repos\\CryptoPortfolio\\CryptoPortfolio.Business.Helper.Tests\\obj\\",
+      "outputPath": "C:\\Source\\Git\\CryptoBits-dotNetCore\\CryptoPortfolio.Business.Helper.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -7919,8 +7919,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Users\\mfsch_000\\Source\\Repos\\CryptoPortfolio\\CryptoPortfolio.Business.Helper\\CryptoPortfolio.Business.Helper.csproj": {
-              "projectPath": "C:\\Users\\mfsch_000\\Source\\Repos\\CryptoPortfolio\\CryptoPortfolio.Business.Helper\\CryptoPortfolio.Business.Helper.csproj"
+            "C:\\Source\\Git\\CryptoBits-dotNetCore\\CryptoPortfolio.Business.Helper\\CryptoPortfolio.Business.Helper.csproj": {
+              "projectPath": "C:\\Source\\Git\\CryptoBits-dotNetCore\\CryptoPortfolio.Business.Helper\\CryptoPortfolio.Business.Helper.csproj"
             }
           }
         }

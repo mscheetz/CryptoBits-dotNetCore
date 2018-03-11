@@ -7,3 +7,12 @@ C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Business.Contrac
 C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Business.Contracts\obj\Debug\netcoreapp2.0\CryptoPortfolio.Business.Contracts.dll
 C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Business.Contracts\obj\Debug\netcoreapp2.0\CryptoPortfolio.Business.Contracts.pdb
 C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Business.Contracts\obj\Debug\netcoreapp2.0\CryptoPortfolio.Business.Contracts.csprojResolveAssemblyReference.cache
+C:\Source\Git\CryptoBits-dotNetCore\CryptoPortfolio.Business.Contracts\bin\Debug\netcoreapp2.0\CryptoPortfolio.Business.Contracts.deps.json
+C:\Source\Git\CryptoBits-dotNetCore\CryptoPortfolio.Business.Contracts\bin\Debug\netcoreapp2.0\CryptoPortfolio.Business.Contracts.dll
+C:\Source\Git\CryptoBits-dotNetCore\CryptoPortfolio.Business.Contracts\bin\Debug\netcoreapp2.0\CryptoPortfolio.Business.Contracts.pdb
+C:\Source\Git\CryptoBits-dotNetCore\CryptoPortfolio.Business.Contracts\obj\Debug\netcoreapp2.0\CryptoPortfolio.Business.Contracts.csprojResolveAssemblyReference.cache
+C:\Source\Git\CryptoBits-dotNetCore\CryptoPortfolio.Business.Contracts\obj\Debug\netcoreapp2.0\CryptoPortfolio.Business.Contracts.csproj.CoreCompileInputs.cache
+C:\Source\Git\CryptoBits-dotNetCore\CryptoPortfolio.Business.Contracts\obj\Debug\netcoreapp2.0\CryptoPortfolio.Business.Contracts.AssemblyInfoInputs.cache
+C:\Source\Git\CryptoBits-dotNetCore\CryptoPortfolio.Business.Contracts\obj\Debug\netcoreapp2.0\CryptoPortfolio.Business.Contracts.AssemblyInfo.cs
+C:\Source\Git\CryptoBits-dotNetCore\CryptoPortfolio.Business.Contracts\obj\Debug\netcoreapp2.0\CryptoPortfolio.Business.Contracts.dll
+C:\Source\Git\CryptoBits-dotNetCore\CryptoPortfolio.Business.Contracts\obj\Debug\netcoreapp2.0\CryptoPortfolio.Business.Contracts.pdb

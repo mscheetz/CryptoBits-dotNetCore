@@ -7,3 +7,12 @@ C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Tests.Objects\ob
 C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Tests.Objects\obj\Debug\netcoreapp2.0\CryptoPortfolio.Tests.Objects.dll
 C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Tests.Objects\obj\Debug\netcoreapp2.0\CryptoPortfolio.Tests.Objects.pdb
 C:\Users\mfsch_000\Source\Repos\CryptoPortfolio\CryptoPortfolio.Tests.Objects\obj\Debug\netcoreapp2.0\CryptoPortfolio.Tests.Objects.csprojResolveAssemblyReference.cache
+C:\Source\Git\CryptoBits-dotNetCore\CryptoPortfolio.Tests.Objects\bin\Debug\netcoreapp2.0\CryptoPortfolio.Tests.Objects.deps.json
+C:\Source\Git\CryptoBits-dotNetCore\CryptoPortfolio.Tests.Objects\bin\Debug\netcoreapp2.0\CryptoPortfolio.Tests.Objects.dll
+C:\Source\Git\CryptoBits-dotNetCore\CryptoPortfolio.Tests.Objects\bin\Debug\netcoreapp2.0\CryptoPortfolio.Tests.Objects.pdb
+C:\Source\Git\CryptoBits-dotNetCore\CryptoPortfolio.Tests.Objects\obj\Debug\netcoreapp2.0\CryptoPortfolio.Tests.Objects.csprojResolveAssemblyReference.cache
+C:\Source\Git\CryptoBits-dotNetCore\CryptoPortfolio.Tests.Objects\obj\Debug\netcoreapp2.0\CryptoPortfolio.Tests.Objects.csproj.CoreCompileInputs.cache
+C:\Source\Git\CryptoBits-dotNetCore\CryptoPortfolio.Tests.Objects\obj\Debug\netcoreapp2.0\CryptoPortfolio.Tests.Objects.AssemblyInfoInputs.cache
+C:\Source\Git\CryptoBits-dotNetCore\CryptoPortfolio.Tests.Objects\obj\Debug\netcoreapp2.0\CryptoPortfolio.Tests.Objects.AssemblyInfo.cs
+C:\Source\Git\CryptoBits-dotNetCore\CryptoPortfolio.Tests.Objects\obj\Debug\netcoreapp2.0\CryptoPortfolio.Tests.Objects.dll
+C:\Source\Git\CryptoBits-dotNetCore\CryptoPortfolio.Tests.Objects\obj\Debug\netcoreapp2.0\CryptoPortfolio.Tests.Objects.pdb

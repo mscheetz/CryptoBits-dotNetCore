@@ -7028,11 +7028,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\mfsch_000\\Source\\Repos\\CryptoPortfolio\\CryptoPortfolio.Business.Builder\\CryptoPortfolio.Business.Builder.csproj",
+      "projectUniqueName": "C:\\Source\\Git\\CryptoBits-dotNetCore\\CryptoPortfolio.Business.Builder\\CryptoPortfolio.Business.Builder.csproj",
       "projectName": "CryptoPortfolio.Business.Builder",
-      "projectPath": "C:\\Users\\mfsch_000\\Source\\Repos\\CryptoPortfolio\\CryptoPortfolio.Business.Builder\\CryptoPortfolio.Business.Builder.csproj",
+      "projectPath": "C:\\Source\\Git\\CryptoBits-dotNetCore\\CryptoPortfolio.Business.Builder\\CryptoPortfolio.Business.Builder.csproj",
       "packagesPath": "C:\\Users\\mfsch_000\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mfsch_000\\Source\\Repos\\CryptoPortfolio\\CryptoPortfolio.Business.Builder\\obj\\",
+      "outputPath": "C:\\Source\\Git\\CryptoBits-dotNetCore\\CryptoPortfolio.Business.Builder\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -7051,17 +7051,17 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Users\\mfsch_000\\Source\\Repos\\CryptoPortfolio\\CryptoPortfolio.Data\\CryptoPortfolio.Data.csproj": {
-              "projectPath": "C:\\Users\\mfsch_000\\Source\\Repos\\CryptoPortfolio\\CryptoPortfolio.Data\\CryptoPortfolio.Data.csproj"
+            "C:\\Source\\Git\\CryptoBits-dotNetCore\\CryptoPortfolio.Data\\CryptoPortfolio.Data.csproj": {
+              "projectPath": "C:\\Source\\Git\\CryptoBits-dotNetCore\\CryptoPortfolio.Data\\CryptoPortfolio.Data.csproj"
             },
-            "C:\\Users\\mfsch_000\\Source\\Repos\\CryptoPortfolio\\CryptoPortfolio.Business.Builder.Interfaces\\CryptoPortfolio.Business.Builder.Interfaces.csproj": {
-              "projectPath": "C:\\Users\\mfsch_000\\Source\\Repos\\CryptoPortfolio\\CryptoPortfolio.Business.Builder.Interfaces\\CryptoPortfolio.Business.Builder.Interfaces.csproj"
+            "C:\\Source\\Git\\CryptoBits-dotNetCore\\CryptoPortfolio.Business.Builder.Interfaces\\CryptoPortfolio.Business.Builder.Interfaces.csproj": {
+              "projectPath": "C:\\Source\\Git\\CryptoBits-dotNetCore\\CryptoPortfolio.Business.Builder.Interfaces\\CryptoPortfolio.Business.Builder.Interfaces.csproj"
             },
-            "C:\\Users\\mfsch_000\\Source\\Repos\\CryptoPortfolio\\CryptoPortfolio.Business.Contracts\\CryptoPortfolio.Business.Contracts.csproj": {
-              "projectPath": "C:\\Users\\mfsch_000\\Source\\Repos\\CryptoPortfolio\\CryptoPortfolio.Business.Contracts\\CryptoPortfolio.Business.Contracts.csproj"
+            "C:\\Source\\Git\\CryptoBits-dotNetCore\\CryptoPortfolio.Business.Contracts\\CryptoPortfolio.Business.Contracts.csproj": {
+              "projectPath": "C:\\Source\\Git\\CryptoBits-dotNetCore\\CryptoPortfolio.Business.Contracts\\CryptoPortfolio.Business.Contracts.csproj"
             },
-            "C:\\Users\\mfsch_000\\Source\\Repos\\CryptoPortfolio\\CryptoPortfolio.Data.Interfaces\\CryptoPortfolio.Data.Interfaces.csproj": {
-              "projectPath": "C:\\Users\\mfsch_000\\Source\\Repos\\CryptoPortfolio\\CryptoPortfolio.Data.Interfaces\\CryptoPortfolio.Data.Interfaces.csproj"
+            "C:\\Source\\Git\\CryptoBits-dotNetCore\\CryptoPortfolio.Data.Interfaces\\CryptoPortfolio.Data.Interfaces.csproj": {
+              "projectPath": "C:\\Source\\Git\\CryptoBits-dotNetCore\\CryptoPortfolio.Data.Interfaces\\CryptoPortfolio.Data.Interfaces.csproj"
             }
           }
         }
