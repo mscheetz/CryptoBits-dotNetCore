@@ -21,3 +21,13 @@
 /CryptoPortfolio.Business.Data.Tests/obj
 /CryptoPortfolio.Business.Tests.Objects/obj
 /CryptoPortfolio.Business.WebApi/obj
+/CryptoPortfolio.Data/obj
+/CryptoPortfolio.Data/bin
+/CryptoPortfolio.Data.Interfaces/obj
+/CryptoPortfolio.Data.Interfaces/bin
+/CryptoPortfolio.Data.Tests/obj
+/CryptoPortfolio.Data.Tests/bin
+/CryptoPortfolio.Tests.Objects/bin
+/CryptoPortfolio.Tests.Objects/obj
+/CryptoPortfolio.WebApi/obj
+/CryptoPortfolio.WebApi/bin
