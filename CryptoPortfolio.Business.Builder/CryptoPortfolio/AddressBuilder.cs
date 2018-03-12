@@ -15,13 +15,13 @@ namespace CryptoPortfolio.Business.Builder.CryptoPortfolio
     {
         private IAddressRepository _repo;
         private ObjectHelper _objectHelper;
-        private List<Contracts.CryptoBits.Address> _addressContractList;
+        private List<Contracts.CryptoBits.AddressOG> _addressContractList;
 
         public AddressBuilder(IOptions<MongoDbSettings> settings)
         {
             _repo = new AddressRepository(settings);
             _objectHelper = new ObjectHelper();
-            _addressContractList = new List<Contracts.CryptoBits.Address>();
+            _addressContractList = new List<Contracts.CryptoBits.AddressOG>();
         }
 
         public void SetAddressList()
@@ -31,7 +31,7 @@ namespace CryptoPortfolio.Business.Builder.CryptoPortfolio
             _addressContractList = GetContractList(entityList.ToList());
         }
 
-        public IEnumerable<Contracts.CryptoBits.Address> GetAddressList()
+        public IEnumerable<Contracts.CryptoBits.AddressOG> GetAddressList()
         {
             if (_addressContractList.Count == 0)
             {
@@ -40,12 +40,12 @@ namespace CryptoPortfolio.Business.Builder.CryptoPortfolio
             return _addressContractList;
         }
 
-        public IEnumerable<Contracts.CryptoBits.Address> GetAddress(string symbol)
+        public IEnumerable<Contracts.CryptoBits.AddressOG> GetAddress(string symbol)
         {
             return _addressContractList.Where(a => a.symbol.Equals(symbol));
         }
 
-        public bool AddAddress(Contracts.CryptoBits.Address newAddress)
+        public bool AddAddress(Contracts.CryptoBits.AddressOG newAddress)
         {
             var entity = GetEntity(newAddress);
             var result = _repo.AddAddress(entity);
@@ -60,36 +60,36 @@ namespace CryptoPortfolio.Business.Builder.CryptoPortfolio
             }
         }
 
-        public bool UpdateAddress(Contracts.CryptoBits.Address address)
+        public bool UpdateAddress(Contracts.CryptoBits.AddressOG address)
         {
             var entity = GetEntity(address);
             return _repo.UpdateAddress(entity).Result;
         }
 
-        public bool DeleteAddress(Contracts.CryptoBits.Address address)
+        public bool DeleteAddress(Contracts.CryptoBits.AddressOG address)
         {
             var entity = GetEntity(address);
             return _repo.DeleteAddress(entity).Result;
         }
 
-        private Entities.Crypto.Address GetEntity(Contracts.CryptoBits.Address apiInfo)
+        private Entities.Crypto.Address GetEntity(Contracts.CryptoBits.AddressOG apiInfo)
         {
-            return _objectHelper.CreateEntity<Contracts.CryptoBits.Address, Entities.Crypto.Address>(apiInfo);
+            return _objectHelper.CreateEntity<Contracts.CryptoBits.AddressOG, Entities.Crypto.Address>(apiInfo);
         }
 
-        private List<Entities.Crypto.Address> GetEntityList(List<Contracts.CryptoBits.Address> apiInfo)
+        private List<Entities.Crypto.Address> GetEntityList(List<Contracts.CryptoBits.AddressOG> apiInfo)
         {
-            return _objectHelper.CreateEntity<List<Contracts.CryptoBits.Address>, List<Entities.Crypto.Address>>(apiInfo);
+            return _objectHelper.CreateEntity<List<Contracts.CryptoBits.AddressOG>, List<Entities.Crypto.Address>>(apiInfo);
         }
 
-        private Contracts.CryptoBits.Address GetContract(Entities.Crypto.Address apiInfo)
+        private Contracts.CryptoBits.AddressOG GetContract(Entities.Crypto.Address apiInfo)
         {
-            return _objectHelper.CreateEntity<Entities.Crypto.Address, Contracts.CryptoBits.Address>(apiInfo);
+            return _objectHelper.CreateEntity<Entities.Crypto.Address, Contracts.CryptoBits.AddressOG>(apiInfo);
         }
 
-        private List<Contracts.CryptoBits.Address> GetContractList(List<Entities.Crypto.Address> apiInfo)
+        private List<Contracts.CryptoBits.AddressOG> GetContractList(List<Entities.Crypto.Address> apiInfo)
         {
-            return _objectHelper.CreateEntity<List<Entities.Crypto.Address>, List<Contracts.CryptoBits.Address>>(apiInfo);
+            return _objectHelper.CreateEntity<List<Entities.Crypto.Address>, List<Contracts.CryptoBits.AddressOG>>(apiInfo);
         }
     }
 }

@@ -8,14 +8,14 @@ namespace CryptoPortfolio.Business.Builder.Interfaces.CryptoPortfolio
     {
         void SetAddressList();
 
-        IEnumerable<Address> GetAddressList();
+        IEnumerable<AddressOG> GetAddressList();
 
-        IEnumerable<Address> GetAddress(string symbol);
+        IEnumerable<AddressOG> GetAddress(string symbol);
 
-        bool AddAddress(Address newAddress);
+        bool AddAddress(AddressOG newAddress);
 
-        bool UpdateAddress(Address address);
+        bool UpdateAddress(AddressOG address);
 
-        bool DeleteAddress(Address address);
+        bool DeleteAddress(AddressOG address);
     }
 }

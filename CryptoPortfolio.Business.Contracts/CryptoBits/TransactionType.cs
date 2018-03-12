@@ -4,9 +4,14 @@ using System.Text;
 
 namespace CryptoPortfolio.Business.Contracts.CryptoBits
 {
-    public class Address
+    public enum TransactionType
     {
-        public string addressId { get; set; }
-        public string addressName { get; set; }
+        NONE,
+        AIRDROP,
+        ICO,
+        BUY,
+        SELL,
+        DEPOSIT,
+        WITHDRAWAL
     }
 }
