@@ -17,5 +17,8 @@ namespace CryptoPortfolio.Business.Contracts.CryptoBits
         public decimal low { get; set; }
         public decimal high { get; set; }
         public decimal avg { get; set; }
+        public decimal change1h { get; set; }
+        public decimal change24h { get; set; }
+        public decimal change7d { get; set; }
     }
 }

@@ -9,6 +9,7 @@ namespace CryptoPortfolio.Business.Contracts.CryptoBits
         public string Id { get; set; }
         public string exchange { get; set; }
         public string symbol { get; set; }
+        public string name { get; set; }
         public int orderId { get; set; }
         public string clientOrderId { get; set; }
         public string price { get; set; }

@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CryptoPortfolio.Business.Builder.Interfaces\CryptoPortfolio.Business.Builder.Interfaces.csproj" />
+    <ProjectReference Include="..\CryptoPortfolio.Business.Builder\CryptoPortfolio.Business.Builder.csproj" />
+    <ProjectReference Include="..\CryptoPortfolio.Business.Contracts\CryptoPortfolio.Business.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>
