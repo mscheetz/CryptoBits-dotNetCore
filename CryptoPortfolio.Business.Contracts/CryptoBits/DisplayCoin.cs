@@ -11,14 +11,14 @@ namespace CryptoPortfolio.Business.Contracts.CryptoBits
     {
         public string symbol { get; set; }
         public string name { get; set; }
-        public decimal quanity { get; set; }
+        public double quanity { get; set; }
         public int locations { get; set; }
         public Ticker ticker { get; set; }
-        public decimal low { get; set; }
-        public decimal high { get; set; }
-        public decimal avg { get; set; }
-        public decimal change1h { get; set; }
-        public decimal change24h { get; set; }
-        public decimal change7d { get; set; }
+        public double low { get; set; }
+        public double high { get; set; }
+        public double avg { get; set; }
+        public double change1h { get; set; }
+        public double change24h { get; set; }
+        public double change7d { get; set; }
     }
 }

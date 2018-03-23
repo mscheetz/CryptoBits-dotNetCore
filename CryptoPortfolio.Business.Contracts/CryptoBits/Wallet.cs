@@ -11,6 +11,6 @@ namespace CryptoPortfolio.Business.Contracts.CryptoBits
     {
         public Location location { get; set; }
         public List<CoinBuy> coinBuyList { get; set; }
-        public AddressOG address { get; set; }
+        public Address address { get; set; }
     }
 }
