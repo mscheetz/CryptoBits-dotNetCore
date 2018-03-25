@@ -45,5 +45,17 @@ namespace CryptoPortfolio.Business.Helper
         {
             return zeroSats;
         }
+
+        /// <summary>
+        /// Get seconds from a timestamp to now
+        /// </summary>
+        /// <param name="timeStart">DateTime to compare</param>
+        /// <returns>Double of seconds</returns>
+        public double CompareSeconds(DateTime timeStart)
+        {
+            var timeNow = DateTime.UtcNow;
+
+            return (timeStart - timeNow).TotalSeconds;
+        }
     }
 }
