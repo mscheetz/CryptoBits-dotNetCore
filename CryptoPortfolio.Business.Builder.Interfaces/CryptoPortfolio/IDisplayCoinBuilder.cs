@@ -9,8 +9,9 @@ namespace CryptoPortfolio.Business.Builder.Interfaces.CryptoPortfolio
         /// <summary>
         /// Get display coins
         /// </summary>
+        /// <param name="newTransaction">Boolean if new transaction</param>
         /// <returns>Collection of display coins</returns>
-        List<DisplayCoin> GetDisplayCoins();
+        List<DisplayCoin> GetDisplayCoins(bool newTransaction = false);
 
         /// <summary>
         /// Update display coins

@@ -25,10 +25,11 @@ namespace CryptoPortfolio.Business.Builder.CryptoPortfolio
         /// <summary>
         /// Get display coins
         /// </summary>
+        /// <param name="newTransaction">Boolean if new transaction</param>
         /// <returns>Collection of display coins</returns>
-        public List<DisplayCoin> GetDisplayCoins()
+        public List<DisplayCoin> GetDisplayCoins(bool newTransaction = false)
         {
-            if (this._displayCoinList.Count == 0)
+            if (newTransaction || this._displayCoinList.Count == 0)
                 UpdateDisplayCoins();
 
             return this._displayCoinList;
