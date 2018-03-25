@@ -2170,6 +2170,19 @@
           "bin/placeholder/CryptoPortfolio.Business.Helper.dll": {}
         }
       },
+      "CryptoPortfolio.Business.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "dependencies": {
+          "CryptoPortfolio.Business.Contracts": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CryptoPortfolio.Business.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CryptoPortfolio.Business.Service.dll": {}
+        }
+      },
       "CryptoPortfolio.Data/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.0",
@@ -7019,6 +7032,11 @@
       "path": "../CryptoPortfolio.Business.Helper/CryptoPortfolio.Business.Helper.csproj",
       "msbuildProject": "../CryptoPortfolio.Business.Helper/CryptoPortfolio.Business.Helper.csproj"
     },
+    "CryptoPortfolio.Business.Service/1.0.0": {
+      "type": "project",
+      "path": "../CryptoPortfolio.Business.Service/CryptoPortfolio.Business.Service.csproj",
+      "msbuildProject": "../CryptoPortfolio.Business.Service/CryptoPortfolio.Business.Service.csproj"
+    },
     "CryptoPortfolio.Data/1.0.0": {
       "type": "project",
       "path": "../CryptoPortfolio.Data/CryptoPortfolio.Data.csproj",
@@ -7035,6 +7053,7 @@
       "CryptoPortfolio.Business.Builder >= 1.0.0",
       "CryptoPortfolio.Business.Builder.Interfaces >= 1.0.0",
       "CryptoPortfolio.Business.Contracts >= 1.0.0",
+      "CryptoPortfolio.Business.Service >= 1.0.0",
       "Microsoft.NETCore.App >= 2.0.0"
     ]
   },
@@ -7076,6 +7095,9 @@
             },
             "C:\\Source\\Git\\CryptoBits-dotNetCore\\CryptoPortfolio.Business.Builder\\CryptoPortfolio.Business.Builder.csproj": {
               "projectPath": "C:\\Source\\Git\\CryptoBits-dotNetCore\\CryptoPortfolio.Business.Builder\\CryptoPortfolio.Business.Builder.csproj"
+            },
+            "C:\\Source\\Git\\CryptoBits-dotNetCore\\CryptoPortfolio.Business.Service\\CryptoPortfolio.Business.Service.csproj": {
+              "projectPath": "C:\\Source\\Git\\CryptoBits-dotNetCore\\CryptoPortfolio.Business.Service\\CryptoPortfolio.Business.Service.csproj"
             },
             "C:\\Source\\Git\\CryptoBits-dotNetCore\\CryptoPortfolio.Business.Contracts\\CryptoPortfolio.Business.Contracts.csproj": {
               "projectPath": "C:\\Source\\Git\\CryptoBits-dotNetCore\\CryptoPortfolio.Business.Contracts\\CryptoPortfolio.Business.Contracts.csproj"

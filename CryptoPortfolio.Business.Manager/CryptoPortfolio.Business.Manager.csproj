@@ -8,6 +8,7 @@
     <ProjectReference Include="..\CryptoPortfolio.Business.Builder.Interfaces\CryptoPortfolio.Business.Builder.Interfaces.csproj" />
     <ProjectReference Include="..\CryptoPortfolio.Business.Builder\CryptoPortfolio.Business.Builder.csproj" />
     <ProjectReference Include="..\CryptoPortfolio.Business.Contracts\CryptoPortfolio.Business.Contracts.csproj" />
+    <ProjectReference Include="..\CryptoPortfolio.Business.Service\CryptoPortfolio.Business.Service.csproj" />
   </ItemGroup>
 
 </Project>

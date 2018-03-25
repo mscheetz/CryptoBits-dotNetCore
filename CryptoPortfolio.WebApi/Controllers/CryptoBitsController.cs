@@ -1,17 +1,13 @@
 ﻿using CryptoPortfolio.Business.Contracts.CryptoBits;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using CryptoPortfolio.Business.Builder.Interfaces.Sources;
 using CryptoPortfolio.Business.Builder.Sources;
 using CryptoPortfolio.Business.Contracts.Sources;
 using CryptoPortfolio.Business.Builder.Interfaces.CryptoPortfolio;
 using CryptoPortfolio.Business.Builder.CryptoPortfolio;
-using Microsoft.Extensions.Options;
-using CryptoPortfolio.Business.Entities.Crypto;
+using CryptoPortfolio.Business.Manager;
+using CryptoPortfolio.Business.Service;
 
 namespace CryptoPortfolio.WebApi.Controllers
 {
@@ -19,51 +15,60 @@ namespace CryptoPortfolio.WebApi.Controllers
     [Route("api/cryptobits")]
     public class CryptoBitsController : Controller
     {
-        private INinetyNineCryptoBuilder _nnBldr;
-        private ICoindarBuilder _coindarBldr;
-        private ICoinMarketCapBuilder _cmcBldr;
-        //private ITransactionBuilder _trxBldr;
+        private ICryptoPortfolioService _service;
 
-        public CryptoBitsController()//ITransactionBuilder trxBuilder)
+        public CryptoBitsController()
         {
-            this._nnBldr = new NinetyNineCryptoBuilder();
-            this._coindarBldr = new CoindarBuilder();
-            this._cmcBldr = new CoinMarketCapBuilder();
-            //this._trxBldr = trxBuilder;
+            this._service = new CryptoPortfolioManager();
+        }
+
+        // GET: api/cryptobits/status
+        [HttpGet]
+        public bool GetServiceStatus()
+        {
+            return true;
         }
 
         // GET: api/cryptobits
-        [HttpGet]
+        [HttpGet("coins")]
         public IEnumerable<Coin> GetCoins()
         {
-            return this._nnBldr.GetAllCoins();
+            return this._service.GetCoins();
         }
 
         // GET: api/cryptobits/cmc
         [HttpGet("cmc")]
         public IEnumerable<CMCCoin> GetCMCCoins()
         {
-            return this._cmcBldr.GetCoins();
+            return this._service.GetCMCCoins();
         }
 
-        // GET: api/cryptobits/bitcoin
-        [HttpGet("{name}", Name = "Get")]
+        // POST: api/cryptobits/cmc
+        [HttpPost("cmc")]
+        public IEnumerable<CMCCoin> GetCMCCoins([FromBody]string[] symbols)
+        {
+            return this._service.GetCMCCoins(symbols);
+        }
+
+        // GET: api/cryptobits/cmc/{coinName}
+        [HttpGet("cmc/{name}", Name = "Get")]
         public CMCCoin GetCMCCoin(string name)
         {
-            return this._cmcBldr.GetCoin(name);
+            return this._service.GetCMCCoin(name);
+        }
+
+        // GET: api/cryptobits/events/{coinName}
+        [HttpGet("events/{name}")]
+        public IEnumerable<Event> GetEvents(string name)
+        {
+            return this._service.GetEvents(name);
         }
 
         // POST: api/cryptobits/transaction
         [HttpPost("transaction")]
-        public void Post([FromBody]Business.Contracts.CryptoBits.Transaction transaction)
+        public IEnumerable<DisplayCoin> PostTransaction([FromBody]NewTransaction transaction)
         {
-            //this._trxBldr.AddTransaction(transaction);
-        }
-
-        [HttpGet("events/{name}")]
-        public IEnumerable<Event> GetEvents(string name)
-        {
-            return this._coindarBldr.GetEvents(name);
+            return this._service.PostTransaction(transaction);
         }
 
         // PUT: api/cryptobits/5
