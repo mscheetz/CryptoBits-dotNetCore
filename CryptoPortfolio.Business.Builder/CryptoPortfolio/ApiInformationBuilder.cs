@@ -15,9 +15,9 @@ namespace CryptoPortfolio.Business.Builder.CryptoPortfolio
         private ObjectHelper _objectHelper;
         private List<Contracts.CryptoBits.ApiInformation> _apiInfoList;
 
-        public ApiInformationBuilder(IOptions<MongoDbSettings> settings)
+        public ApiInformationBuilder(IApiInformationRepository apiInformationRepository)
         {
-            _repo = new ApiInformationRepository(settings);
+            _repo = apiInformationRepository;
             _objectHelper = new ObjectHelper();
             this.SetApiInformation();
         }

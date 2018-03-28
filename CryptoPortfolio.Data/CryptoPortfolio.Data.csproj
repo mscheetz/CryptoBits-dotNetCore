@@ -15,6 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CryptoPortfolio.Business.Entities\CryptoPortfolio.Business.Entities.csproj" />
     <ProjectReference Include="..\CryptoPortfolio.Business.Helper\CryptoPortfolio.Business.Helper.csproj" />
+    <ProjectReference Include="..\CryptoPortfolio.Data.Core\CryptoPortfolio.Data.Core.csproj" />
     <ProjectReference Include="..\CryptoPortfolio.Data.Interfaces\CryptoPortfolio.Data.Interfaces.csproj" />
   </ItemGroup>
 

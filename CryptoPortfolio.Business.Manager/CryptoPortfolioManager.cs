@@ -10,11 +10,14 @@ using System.Text;
 using CryptoPortfolio.Business.Contracts.CryptoBits;
 using System.Net.Http;
 using System.Net;
+using CryptoPortfolio.Data.Interfaces;
+using CryptoPortfolio.Business.Core;
 
 namespace CryptoPortfolio.Business.Manager
 {
-    public class CryptoPortfolioManager : ICryptoPortfolioService
+    public class CryptoPortfolioManager : ManagerCore, ICryptoPortfolioService
     {
+        private IApiInformationBuilder _apiBldr;
         private INinetyNineCryptoBuilder _nnBldr;
         private ICoindarBuilder _coindarBldr;
         private ICoinMarketCapBuilder _cmcBldr;
@@ -30,8 +33,21 @@ namespace CryptoPortfolio.Business.Manager
             this._displayCoinBldr = new DisplayCoinBuilder();
         }
 
+        public CryptoPortfolioManager(IBuilderFactory builderFactory) : base(builderFactory)
+        {
+        }
+
+        public CryptoPortfolioManager(IRepositoryFactory repoFactory) : base(repoFactory)
+        {
+        }
+
+        public CryptoPortfolioManager(IBuilderFactory builderFactory, IRepositoryFactory repositoryFactory) : base(builderFactory, repositoryFactory)
+        {
+        }
+
         public IEnumerable<Coin> GetCoins()
         {
+            INinetyNineCryptoBuilder bldr = this.BuilderFactory.GetBuilderEngine<INinetyNineCryptoBuilder>();
             return this._nnBldr.GetAllCoins();
         }
 
@@ -68,6 +84,11 @@ namespace CryptoPortfolio.Business.Manager
                 // TODO: Throw error
                 return new List<DisplayCoin>();
             }
+        }
+
+        public bool PostApiInformation(ApiInformation apiInformation)
+        {
+            return true;
         }
     }
 }

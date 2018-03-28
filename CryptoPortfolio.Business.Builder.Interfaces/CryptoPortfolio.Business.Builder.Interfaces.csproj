@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CryptoPortfolio.Business.Contracts\CryptoPortfolio.Business.Contracts.csproj" />
+    <ProjectReference Include="..\CryptoPortfolio.Business.Core\CryptoPortfolio.Business.Core.csproj" />
   </ItemGroup>
 
 </Project>

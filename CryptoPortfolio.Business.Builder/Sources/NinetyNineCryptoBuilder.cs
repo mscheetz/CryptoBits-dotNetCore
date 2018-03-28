@@ -1,15 +1,18 @@
 ﻿using CryptoPortfolio.Business.Builder.Interfaces.Sources;
 using CryptoPortfolio.Business.Contracts.Sources;
+using CryptoPortfolio.Business.Core;
 using CryptoPortfolio.Business.Entities.NinetyNineCrypto;
 using CryptoPortfolio.Data.Interfaces.NinetyNineCrypto;
 using CryptoPortfolio.Data.NinetyNineCrypto;
 using System;
 using System.Collections.Generic;
+using System.Composition;
 using System.Text;
 
 namespace CryptoPortfolio.Business.Builder.Sources
 {
-    public class NinetyNineCryptoBuilder : INinetyNineCryptoBuilder
+    [Export(typeof(INinetyNineCryptoBuilder))]
+    public class NinetyNineCryptoBuilder : BuilderEngineCore, INinetyNineCryptoBuilder
     {
         private INinetyNineCryptoRepository _repo;
 

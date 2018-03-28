@@ -1,5 +1,6 @@
 ﻿using CryptoPortfolio.Business.Entities;
 using CryptoPortfolio.Business.Entities.Crypto;
+using CryptoPortfolio.Data.Core;
 using CryptoPortfolio.Data.Interfaces;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
@@ -10,15 +11,15 @@ using System.Threading.Tasks;
 
 namespace CryptoPortfolio.Data
 {
-    public class ApiInformationRepository : IApiInformationRepository
+    public class ApiInformationRepository : MongoRepository, IApiInformationRepository
     {
-        private readonly CryptoPortfolioContext _context = null;        
+        private readonly CryptoPortfolioContext _context = null;
 
         public ApiInformationRepository(IOptions<MongoDbSettings> settings)
         {
             _context = new CryptoPortfolioContext(settings);
         }
-
+        
         public async Task<IEnumerable<ApiInformation>> GetApiInfo()
         {
             try

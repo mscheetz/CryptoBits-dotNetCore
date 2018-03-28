@@ -71,10 +71,11 @@ namespace CryptoPortfolio.WebApi.Controllers
             return this._service.PostTransaction(transaction);
         }
 
-        // PUT: api/cryptobits/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        // POST: api/cryptobits/exchangeapi
+        [HttpPost("exchangeapi")]
+        public bool PostApiInformation([FromBody]ApiInformation apiInformation)
         {
+            return true;
         }
         
         // DELETE: api/ApiWithActions/5

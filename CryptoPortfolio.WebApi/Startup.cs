@@ -41,6 +41,7 @@ namespace CryptoPortfolio.WebApi
             services.AddTransient<IBalanceRepository, BalanceRepository>();
             services.AddTransient<ICryptoValueRepository, CryptoValueRepository>();
             services.AddTransient<ITransactionRepository, TransactionRepository>();
+            services.AddTransient<IApiInformationRepository, ApiInformationRepository>();
 
             services.AddSwaggerGen(c =>
             {
