@@ -1,0 +1,8 @@
+C:\Source\Git\CryptoBits-dotNetCore\CryptoPortfolio.Data.Core.Interfaces\bin\Debug\netcoreapp2.0\CryptoPortfolio.Data.Core.Interfaces.deps.json
+C:\Source\Git\CryptoBits-dotNetCore\CryptoPortfolio.Data.Core.Interfaces\bin\Debug\netcoreapp2.0\CryptoPortfolio.Data.Core.Interfaces.dll
+C:\Source\Git\CryptoBits-dotNetCore\CryptoPortfolio.Data.Core.Interfaces\bin\Debug\netcoreapp2.0\CryptoPortfolio.Data.Core.Interfaces.pdb
+C:\Source\Git\CryptoBits-dotNetCore\CryptoPortfolio.Data.Core.Interfaces\obj\Debug\netcoreapp2.0\CryptoPortfolio.Data.Core.Interfaces.csproj.CoreCompileInputs.cache
+C:\Source\Git\CryptoBits-dotNetCore\CryptoPortfolio.Data.Core.Interfaces\obj\Debug\netcoreapp2.0\CryptoPortfolio.Data.Core.Interfaces.AssemblyInfoInputs.cache
+C:\Source\Git\CryptoBits-dotNetCore\CryptoPortfolio.Data.Core.Interfaces\obj\Debug\netcoreapp2.0\CryptoPortfolio.Data.Core.Interfaces.AssemblyInfo.cs
+C:\Source\Git\CryptoBits-dotNetCore\CryptoPortfolio.Data.Core.Interfaces\obj\Debug\netcoreapp2.0\CryptoPortfolio.Data.Core.Interfaces.dll
+C:\Source\Git\CryptoBits-dotNetCore\CryptoPortfolio.Data.Core.Interfaces\obj\Debug\netcoreapp2.0\CryptoPortfolio.Data.Core.Interfaces.pdb

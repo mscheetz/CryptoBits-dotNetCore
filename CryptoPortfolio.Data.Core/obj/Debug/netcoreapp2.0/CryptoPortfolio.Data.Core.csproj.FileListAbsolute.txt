@@ -1,0 +1,13 @@
+C:\Source\Git\CryptoBits-dotNetCore\CryptoPortfolio.Data.Core\obj\Debug\netcoreapp2.0\CryptoPortfolio.Data.Core.csprojResolveAssemblyReference.cache
+C:\Source\Git\CryptoBits-dotNetCore\CryptoPortfolio.Data.Core\obj\Debug\netcoreapp2.0\CryptoPortfolio.Data.Core.csproj.CoreCompileInputs.cache
+C:\Source\Git\CryptoBits-dotNetCore\CryptoPortfolio.Data.Core\obj\Debug\netcoreapp2.0\CryptoPortfolio.Data.Core.AssemblyInfoInputs.cache
+C:\Source\Git\CryptoBits-dotNetCore\CryptoPortfolio.Data.Core\obj\Debug\netcoreapp2.0\CryptoPortfolio.Data.Core.AssemblyInfo.cs
+C:\Source\Git\CryptoBits-dotNetCore\CryptoPortfolio.Data.Core\bin\Debug\netcoreapp2.0\CryptoPortfolio.Data.Core.deps.json
+C:\Source\Git\CryptoBits-dotNetCore\CryptoPortfolio.Data.Core\bin\Debug\netcoreapp2.0\CryptoPortfolio.Data.Core.dll
+C:\Source\Git\CryptoBits-dotNetCore\CryptoPortfolio.Data.Core\bin\Debug\netcoreapp2.0\CryptoPortfolio.Data.Core.pdb
+C:\Source\Git\CryptoBits-dotNetCore\CryptoPortfolio.Data.Core\bin\Debug\netcoreapp2.0\CryptoPortfolio.Business.Entities.dll
+C:\Source\Git\CryptoBits-dotNetCore\CryptoPortfolio.Data.Core\bin\Debug\netcoreapp2.0\Microsoft.Extensions.Options.dll
+C:\Source\Git\CryptoBits-dotNetCore\CryptoPortfolio.Data.Core\bin\Debug\netcoreapp2.0\CryptoPortfolio.Business.Entities.pdb
+C:\Source\Git\CryptoBits-dotNetCore\CryptoPortfolio.Data.Core\bin\Debug\netcoreapp2.0\Microsoft.Extensions.Options.xml
+C:\Source\Git\CryptoBits-dotNetCore\CryptoPortfolio.Data.Core\obj\Debug\netcoreapp2.0\CryptoPortfolio.Data.Core.dll
+C:\Source\Git\CryptoBits-dotNetCore\CryptoPortfolio.Data.Core\obj\Debug\netcoreapp2.0\CryptoPortfolio.Data.Core.pdb
