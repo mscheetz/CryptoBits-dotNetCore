@@ -55,7 +55,7 @@ namespace CryptoPortfolio.Data
                 throw ex;
             }
         }
-
+        
         public async Task<bool> UpdateCoinInfo(CoinInfo coinInfo)
         {
             try

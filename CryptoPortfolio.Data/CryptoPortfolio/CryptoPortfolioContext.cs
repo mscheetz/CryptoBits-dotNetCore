@@ -16,11 +16,11 @@ namespace CryptoPortfolio.Data
                 _database = client.GetDatabase(settings.Value.database);
         }
 
-        public IMongoCollection<Address> Addresses
+        public IMongoCollection<Address_OG> Addresses
         {
             get
             {
-                return _database.GetCollection<Address>("Address");
+                return _database.GetCollection<Address_OG>("Address");
             }
         }
 

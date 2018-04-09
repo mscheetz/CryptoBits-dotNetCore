@@ -12,12 +12,17 @@ namespace CryptoPortfolio.Data
 {
     public class ApiInformationRepository : IApiInformationRepository
     {
-        private readonly CryptoPortfolioContext _context = null;        
+        private readonly CryptoPortfolioContext _context = null;
 
         public ApiInformationRepository(IOptions<MongoDbSettings> settings)
         {
             _context = new CryptoPortfolioContext(settings);
         }
+
+        //public ApiInformationRepository()
+        //{
+        //    this._context = base.GetContext();
+        //}
 
         public async Task<IEnumerable<ApiInformation>> GetApiInfo()
         {
@@ -68,6 +73,20 @@ namespace CryptoPortfolio.Data
                                             , new UpdateOptions { IsUpsert = true });
                 return actionResult.IsAcknowledged
                     && actionResult.ModifiedCount > 0;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<bool> DeleteApiInfoById(string Id)
+        {
+            try
+            {
+                DeleteResult actionResult = await _context.ApiInformation.DeleteOneAsync(nameof => nameof.Id.Equals(Id));
+
+                return actionResult.IsAcknowledged && actionResult.DeletedCount > 0;
             }
             catch (Exception ex)
             {

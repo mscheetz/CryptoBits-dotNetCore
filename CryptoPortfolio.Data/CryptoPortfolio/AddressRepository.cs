@@ -18,7 +18,7 @@ namespace CryptoPortfolio.Data
             _context = new CryptoPortfolioContext(settings);
         }
 
-        public async Task<IEnumerable<Address>> GetAddresses()
+        public async Task<IEnumerable<Address_OG>> GetAddresses()
         {
             try
             {
@@ -30,9 +30,9 @@ namespace CryptoPortfolio.Data
             }
         }
 
-        public async Task<IEnumerable<Address>> GetAddresses(string symbol)
+        public async Task<IEnumerable<Address_OG>> GetAddresses(string symbol)
         {
-            var filter = Builders<Address>.Filter.Eq("symbol", symbol);
+            var filter = Builders<Address_OG>.Filter.Eq("symbol", symbol);
 
             try
             {
@@ -44,7 +44,7 @@ namespace CryptoPortfolio.Data
             }
         }
 
-        public async Task AddAddress(Address address)
+        public async Task AddAddress(Address_OG address)
         {
             try
             {
@@ -56,7 +56,7 @@ namespace CryptoPortfolio.Data
             }
         }
 
-        public async Task<bool> UpdateAddress(Address address)
+        public async Task<bool> UpdateAddress(Address_OG address)
         {
             try
             {
@@ -74,7 +74,7 @@ namespace CryptoPortfolio.Data
             }
         }
 
-        public async Task<bool> DeleteAddress(Address address)
+        public async Task<bool> DeleteAddress(Address_OG address)
         {
             try
             {

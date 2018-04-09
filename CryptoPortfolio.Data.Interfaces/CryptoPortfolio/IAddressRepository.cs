@@ -8,14 +8,14 @@ namespace CryptoPortfolio.Data.Interfaces
 {
     public interface IAddressRepository
     {
-        Task<IEnumerable<Address>> GetAddresses();
+        Task<IEnumerable<Address_OG>> GetAddresses();
 
-        Task<IEnumerable<Address>> GetAddresses(string symbol);
+        Task<IEnumerable<Address_OG>> GetAddresses(string symbol);
 
-        Task AddAddress(Address address);
+        Task AddAddress(Address_OG address);
 
-        Task<bool> UpdateAddress(Address address);
+        Task<bool> UpdateAddress(Address_OG address);
 
-        Task<bool> DeleteAddress(Address address);
+        Task<bool> DeleteAddress(Address_OG address);
     }
 }

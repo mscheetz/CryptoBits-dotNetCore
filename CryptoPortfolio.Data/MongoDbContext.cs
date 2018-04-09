@@ -32,6 +32,11 @@ namespace CryptoPortfolio.Data
             }
         }
 
+        public IMongoDatabase GetDatabase()
+        {
+            return _database;
+        }
+
         public IMongoCollection<Balance> Balances
         {
             get

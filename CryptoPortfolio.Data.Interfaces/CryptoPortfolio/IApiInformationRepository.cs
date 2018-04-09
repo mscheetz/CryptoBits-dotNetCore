@@ -18,5 +18,7 @@ namespace CryptoPortfolio.Data.Interfaces
         Task<bool> UpdateApiInfo(ApiInformation api);
 
         Task<bool> DeleteApiInfo(ApiInformation api);
+
+        Task<bool> DeleteApiInfoById(string Id);
     }
 }
