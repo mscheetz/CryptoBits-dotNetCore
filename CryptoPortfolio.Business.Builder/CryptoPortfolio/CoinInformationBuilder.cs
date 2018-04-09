@@ -1,9 +1,7 @@
 ﻿using CryptoPortfolio.Business.Builder.Interfaces.CryptoPortfolio;
 using CryptoPortfolio.Business.Contracts.CryptoBits;
 using CryptoPortfolio.Business.Helper;
-using CryptoPortfolio.Data;
 using CryptoPortfolio.Data.Interfaces;
-using Microsoft.Extensions.Options;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -13,12 +11,13 @@ namespace CryptoPortfolio.Business.Builder.CryptoPortfolio
     {
         private ICoinInfoRepository _repo;
         private ObjectHelper _objectHelper;
-        private List<Contracts.CryptoBits.CoinInfo> _coinInfoList;
-        private Contracts.CryptoBits.NewTransaction newTransaction;
+        private NewTransaction newTransaction;
         private List<CoinInformation> coinInfoList;
 
-        public CoinInformationBuilder()
+        public CoinInformationBuilder(ICoinInfoRepository coinInfoRepo)
         {
+            _objectHelper = new ObjectHelper();
+            this._repo = coinInfoRepo;
         }
 
         /// <summary>
@@ -27,9 +26,19 @@ namespace CryptoPortfolio.Business.Builder.CryptoPortfolio
         /// <returns>Collection of CoinInformation</returns>
         public IEnumerable<CoinInformation> GetCoinInformation()
         {
+            if (coinInfoList == null || coinInfoList.Count == 0)
+                SetCoinInformationList();
+
             return coinInfoList;
         }
         
+        public void SetCoinInformationList()
+        {
+            var entityList = _repo.GetCoinInfo().Result.ToList();
+
+            this.coinInfoList = GetContractList(entityList);
+        }
+
         /// <summary>
         /// Process a new transaction from the UI
         /// </summary>
@@ -42,26 +51,27 @@ namespace CryptoPortfolio.Business.Builder.CryptoPortfolio
             //TODO: push to transaction log
 
             var newCoin = GetCoin(transaction);
+            UpdateCoinInformation(newCoin);
 
-            var myCoin = this.coinInfoList.Where(c => c.symbol.Equals(newCoin.symbol)).FirstOrDefault();
+            var foundCoin = this.coinInfoList.FirstOrDefault(c => c.symbol.Equals(newCoin.symbol));
 
-            if(myCoin != null)
+            if(foundCoin == null)
             {
                 this.coinInfoList.Add(newCoin);
             }
             else
             {
-                foreach(var coin in this.coinInfoList)
-                {
-                    if (coin.symbol.Equals(newCoin.symbol))
-                    {
-                        coin.walletList = newCoin.walletList;
-                        break;
-                    }
-                }
+                foundCoin.walletList = newCoin.walletList;
             }
 
             return true;
+        }
+
+        public bool UpdateCoinInformation(CoinInformation coinInfo)
+        {
+            var entity = GetEntity(coinInfo);
+
+            return this._repo.UpdateCoinInfo(entity).Result;
         }
 
         /// <summary>
@@ -251,6 +261,26 @@ namespace CryptoPortfolio.Business.Builder.CryptoPortfolio
             };
 
             return coinSell;
+        }
+
+        private Entities.Crypto.CoinInfo GetEntity(CoinInformation coinInfo)
+        {
+            return _objectHelper.CreateEntity<CoinInformation, Entities.Crypto.CoinInfo>(coinInfo);
+        }
+
+        private CoinInformation GetContract(Entities.Crypto.CoinInfo entity)
+        {
+            return _objectHelper.CreateContract<Entities.Crypto.CoinInfo, CoinInformation>(entity);
+        }
+
+        private List<Entities.Crypto.CoinInfo> GetEntityList(List<CoinInformation> coinInfoList)
+        {
+            return _objectHelper.CreateEntity<List<CoinInformation>, List<Entities.Crypto.CoinInfo>>(coinInfoList);
+        }
+
+        private List<CoinInformation> GetContractList(List<Entities.Crypto.CoinInfo> entityList)
+        {
+            return _objectHelper.CreateContract< List<Entities.Crypto.CoinInfo>, List<CoinInformation>>(entityList);
         }
     }
 }

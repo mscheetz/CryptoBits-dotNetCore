@@ -10,6 +10,7 @@ using System.Text;
 using CryptoPortfolio.Business.Contracts.CryptoBits;
 using System.Net.Http;
 using System.Net;
+using System.Linq;
 
 namespace CryptoPortfolio.Business.Manager
 {
@@ -20,14 +21,16 @@ namespace CryptoPortfolio.Business.Manager
         private ICoinMarketCapBuilder _cmcBldr;
         private ICoinInformationBuilder _coinInfoBldr;
         private IDisplayCoinBuilder _displayCoinBldr;
+        private IApiInformationBuilder _apiBldr;
 
-        public CryptoPortfolioManager()
+        public CryptoPortfolioManager(IApiInformationBuilder apiInformationBuilder, ICoinInformationBuilder coinInfoBuilder)
         {
             this._nnBldr = new NinetyNineCryptoBuilder();
             this._coindarBldr = new CoindarBuilder();
             this._cmcBldr = new CoinMarketCapBuilder();
-            this._coinInfoBldr = new CoinInformationBuilder();
-            this._displayCoinBldr = new DisplayCoinBuilder();
+            this._coinInfoBldr = coinInfoBuilder;
+            this._displayCoinBldr = new DisplayCoinBuilder(coinInfoBuilder);
+            this._apiBldr = apiInformationBuilder;
         }
 
         public IEnumerable<Coin> GetCoins()
@@ -68,6 +71,40 @@ namespace CryptoPortfolio.Business.Manager
                 // TODO: Throw error
                 return new List<DisplayCoin>();
             }
+        }
+
+        public IEnumerable<DisplayCoin> GetDisplayCoins()
+        {
+            return this._displayCoinBldr.GetDisplayCoins();
+        }
+
+        public DisplayCoin GetDisplayCoin(string symbol)
+        {
+            var displayCoins = this._displayCoinBldr.GetDisplayCoins();
+
+            return displayCoins.Where(d => d.symbol.Equals(symbol)).FirstOrDefault();
+        }
+
+        public IEnumerable<ApiInformation> GetApiInformation()
+        {
+            return _apiBldr.GetApiInformation();
+        }
+
+        public ApiInformation GetApiInformation(string apiName)
+        {
+            var apiInformationList = _apiBldr.GetApiInformation();
+
+            return apiInformationList.Where(a => a.apiSource.Equals(apiName)).FirstOrDefault();
+        }
+
+        public bool PostApiInformation(ApiInformation apiInformation)
+        {
+            return _apiBldr.AddApiInformation(apiInformation);
+        }
+
+        public bool DeleteApiInformation(string apiId)
+        {
+            return _apiBldr.DeleteApiInformation(apiId);
         }
     }
 }

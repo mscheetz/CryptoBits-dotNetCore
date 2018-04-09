@@ -1,8 +1,6 @@
 ﻿using CryptoPortfolio.Business.Contracts.CryptoBits;
 using CryptoPortfolio.Business.Contracts.Sources;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace CryptoPortfolio.Business.Service
 {
@@ -20,5 +18,17 @@ namespace CryptoPortfolio.Business.Service
         IEnumerable<Event> GetEvents(string name);
 
         IEnumerable<DisplayCoin> PostTransaction(NewTransaction transaction);
+
+        IEnumerable<DisplayCoin> GetDisplayCoins();
+        
+        DisplayCoin GetDisplayCoin(string symbol);
+
+        IEnumerable<ApiInformation> GetApiInformation();
+
+        ApiInformation GetApiInformation(string apiName);
+
+        bool PostApiInformation(ApiInformation apiInformation);
+
+        bool DeleteApiInformation(string apiId);
     }
 }

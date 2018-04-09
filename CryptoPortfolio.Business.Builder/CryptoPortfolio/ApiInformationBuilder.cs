@@ -15,9 +15,9 @@ namespace CryptoPortfolio.Business.Builder.CryptoPortfolio
         private ObjectHelper _objectHelper;
         private List<Contracts.CryptoBits.ApiInformation> _apiInfoList;
 
-        public ApiInformationBuilder(IOptions<MongoDbSettings> settings)
+        public ApiInformationBuilder(IApiInformationRepository apiInformationRepository)
         {
-            _repo = new ApiInformationRepository(settings);
+            _repo = apiInformationRepository;
             _objectHelper = new ObjectHelper();
             this.SetApiInformation();
         }
@@ -66,10 +66,9 @@ namespace CryptoPortfolio.Business.Builder.CryptoPortfolio
             return _repo.UpdateApiInfo(entity).Result;
         }
 
-        public bool DeleteApiInformation(Contracts.CryptoBits.ApiInformation api)
+        public bool DeleteApiInformation(string apiId)
         {
-            var entity = GetEntity(api);
-            return _repo.DeleteApiInfo(entity).Result;
+            return _repo.DeleteApiInfoById(apiId).Result;
         }
 
         private Entities.ApiInformation GetEntity(Contracts.CryptoBits.ApiInformation apiInfo)

@@ -14,10 +14,10 @@ namespace CryptoPortfolio.Business.Builder.CryptoPortfolio
         private ObjectHelper _helper;
         private double zeroSats;
 
-        public DisplayCoinBuilder()
+        public DisplayCoinBuilder(ICoinInformationBuilder coinInfoBuilder)
         {
             this._displayCoinList = new List<DisplayCoin>();
-            this._coinInfoBuilder = new CoinInformationBuilder();
+            this._coinInfoBuilder = coinInfoBuilder;
             this._helper = new ObjectHelper();
             zeroSats = _helper.ZeroSats();
         }

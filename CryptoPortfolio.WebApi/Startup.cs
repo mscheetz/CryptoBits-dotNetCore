@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CryptoPortfolio.Business.Builder.CryptoPortfolio;
+using CryptoPortfolio.Business.Builder.Interfaces.CryptoPortfolio;
 using CryptoPortfolio.Business.Builder.Mapping;
 using CryptoPortfolio.Business.Entities.Crypto;
+using CryptoPortfolio.Business.Manager;
+using CryptoPortfolio.Business.Service;
 using CryptoPortfolio.Data;
 using CryptoPortfolio.Data.Interfaces;
 using Microsoft.AspNetCore.Builder;
@@ -29,8 +33,6 @@ namespace CryptoPortfolio.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
-
             services.Configure<MongoDbSettings>(options =>
             {
                 options.connectionString
@@ -38,9 +40,16 @@ namespace CryptoPortfolio.WebApi
                 options.database
                     = Configuration.GetSection("MongoDbConnection:Database").Value;
             });
+
+            services.AddMvc();
+
+            services.AddScoped<IApiInformationRepository, ApiInformationRepository>();
+            services.AddScoped<IBalanceRepository, BalanceRepository>();
             services.AddTransient<IBalanceRepository, BalanceRepository>();
             services.AddTransient<ICryptoValueRepository, CryptoValueRepository>();
             services.AddTransient<ITransactionRepository, TransactionRepository>();
+            services.AddTransient<IApiInformationBuilder, ApiInformationBuilder>();
+            services.AddTransient<ICryptoPortfolioService, CryptoPortfolioManager>();
 
             services.AddSwaggerGen(c =>
             {
@@ -48,7 +57,7 @@ namespace CryptoPortfolio.WebApi
                 {
                     Title = "CrytpoBits API",
                     Description = "RESTful API endpoints for CryptoBits",
-                    Contact = new Contact { Name = "Matt Scheetz", Email = "mfscheetz@gmail.com", Url = "https://twitter.com/CryptoBitfolio" },
+                    Contact = new Contact { Name = "CryptoBitfolio", Email = "CryptoBitfolio@gmail.com", Url = "https://twitter.com/CryptoBitfolio" },
                     Version = "1.0"
                 });
             });

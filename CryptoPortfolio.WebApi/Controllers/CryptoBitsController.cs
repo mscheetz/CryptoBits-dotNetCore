@@ -1,12 +1,7 @@
 ﻿using CryptoPortfolio.Business.Contracts.CryptoBits;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
-using CryptoPortfolio.Business.Builder.Interfaces.Sources;
-using CryptoPortfolio.Business.Builder.Sources;
 using CryptoPortfolio.Business.Contracts.Sources;
-using CryptoPortfolio.Business.Builder.Interfaces.CryptoPortfolio;
-using CryptoPortfolio.Business.Builder.CryptoPortfolio;
-using CryptoPortfolio.Business.Manager;
 using CryptoPortfolio.Business.Service;
 
 namespace CryptoPortfolio.WebApi.Controllers
@@ -17,9 +12,9 @@ namespace CryptoPortfolio.WebApi.Controllers
     {
         private ICryptoPortfolioService _service;
 
-        public CryptoBitsController()
+        public CryptoBitsController(ICryptoPortfolioService service)
         {
-            this._service = new CryptoPortfolioManager();
+            this._service = service;
         }
 
         // GET: api/cryptobits/status
@@ -69,6 +64,48 @@ namespace CryptoPortfolio.WebApi.Controllers
         public IEnumerable<DisplayCoin> PostTransaction([FromBody]NewTransaction transaction)
         {
             return this._service.PostTransaction(transaction);
+        }
+
+        // GET: api/cryptobits/displaycoin
+        [HttpGet("displaycoin")]
+        public IEnumerable<DisplayCoin> GetDisplayCoins()
+        {
+            return this._service.GetDisplayCoins();
+        }
+
+        // GET: api/cryptobits/displaycoin/{symbol}
+        [HttpGet("displaycoin/{symbol}")]
+        public DisplayCoin GetDisplayCoin(string symbol)
+        {
+            return this._service.GetDisplayCoin(symbol);
+        }
+
+        // GET: api/cryptobits/apiInformation
+        [HttpGet("apiInformation")]
+        public IEnumerable<ApiInformation> GetApiInformaition()
+        {
+            return this._service.GetApiInformation();
+        }
+
+        // GET: api/cryptobits/apiInformation/{apiSource}
+        [HttpGet("apiInformation/{apiSource}")]
+        public ApiInformation GetApiInformaition(string apiSource)
+        {
+            return this._service.GetApiInformation(apiSource);
+        }
+
+        // POST: api/cryptobits/apiInformation
+        [HttpPost("apiInformation")]
+        public bool PostApiInformation([FromBody]ApiInformation apiInformation)
+        {
+            return this._service.PostApiInformation(apiInformation);
+        }
+
+        // DELETE: api/cryptobits/apiInformation/{apiId}
+        [HttpDelete("apiInformation/{apiId}")]
+        public bool DeleteApiInformation(string apiId)
+        {
+            return this._service.DeleteApiInformation(apiId);
         }
 
         // PUT: api/cryptobits/5

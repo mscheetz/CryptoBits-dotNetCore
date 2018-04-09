@@ -72,24 +72,24 @@ namespace CryptoPortfolio.Business.Builder.CryptoPortfolio
             return _repo.DeleteAddress(entity).Result;
         }
 
-        private Entities.Crypto.Address GetEntity(Contracts.CryptoBits.AddressOG apiInfo)
+        private Entities.Crypto.Address_OG GetEntity(Contracts.CryptoBits.AddressOG apiInfo)
         {
-            return _objectHelper.CreateEntity<Contracts.CryptoBits.AddressOG, Entities.Crypto.Address>(apiInfo);
+            return _objectHelper.CreateEntity<Contracts.CryptoBits.AddressOG, Entities.Crypto.Address_OG>(apiInfo);
         }
 
-        private List<Entities.Crypto.Address> GetEntityList(List<Contracts.CryptoBits.AddressOG> apiInfo)
+        private List<Entities.Crypto.Address_OG> GetEntityList(List<Contracts.CryptoBits.AddressOG> apiInfo)
         {
-            return _objectHelper.CreateEntity<List<Contracts.CryptoBits.AddressOG>, List<Entities.Crypto.Address>>(apiInfo);
+            return _objectHelper.CreateEntity<List<Contracts.CryptoBits.AddressOG>, List<Entities.Crypto.Address_OG>>(apiInfo);
         }
 
-        private Contracts.CryptoBits.AddressOG GetContract(Entities.Crypto.Address apiInfo)
+        private Contracts.CryptoBits.AddressOG GetContract(Entities.Crypto.Address_OG apiInfo)
         {
-            return _objectHelper.CreateEntity<Entities.Crypto.Address, Contracts.CryptoBits.AddressOG>(apiInfo);
+            return _objectHelper.CreateEntity<Entities.Crypto.Address_OG, Contracts.CryptoBits.AddressOG>(apiInfo);
         }
 
-        private List<Contracts.CryptoBits.AddressOG> GetContractList(List<Entities.Crypto.Address> apiInfo)
+        private List<Contracts.CryptoBits.AddressOG> GetContractList(List<Entities.Crypto.Address_OG> apiInfo)
         {
-            return _objectHelper.CreateEntity<List<Entities.Crypto.Address>, List<Contracts.CryptoBits.AddressOG>>(apiInfo);
+            return _objectHelper.CreateEntity<List<Entities.Crypto.Address_OG>, List<Contracts.CryptoBits.AddressOG>>(apiInfo);
         }
     }
 }

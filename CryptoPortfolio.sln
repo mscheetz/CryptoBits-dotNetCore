@@ -35,7 +35,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoPortfolio.WebApi", "C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoPortfolio.Business.Manager", "CryptoPortfolio.Business.Manager\CryptoPortfolio.Business.Manager.csproj", "{C2194623-96DB-4099-BEA4-8D286237A8A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoPortfolio.Business.Service", "CryptoPortfolio.Business.Service\CryptoPortfolio.Business.Service.csproj", "{6303CF3D-AA6E-4669-9AFB-D7B16E93096D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoPortfolio.Business.Service", "CryptoPortfolio.Business.Service\CryptoPortfolio.Business.Service.csproj", "{6303CF3D-AA6E-4669-9AFB-D7B16E93096D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoPortfolio.Data.Core", "CryptoPortfolio.Data.Core\CryptoPortfolio.Data.Core.csproj", "{83425C26-FC83-432F-8410-0242D8AD737C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -95,6 +97,10 @@ Global
 		{6303CF3D-AA6E-4669-9AFB-D7B16E93096D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6303CF3D-AA6E-4669-9AFB-D7B16E93096D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6303CF3D-AA6E-4669-9AFB-D7B16E93096D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83425C26-FC83-432F-8410-0242D8AD737C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83425C26-FC83-432F-8410-0242D8AD737C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83425C26-FC83-432F-8410-0242D8AD737C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83425C26-FC83-432F-8410-0242D8AD737C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -113,6 +119,7 @@ Global
 		{EB94C43A-C321-4825-A0E0-626753E2D2A0} = {98BAB734-E843-460A-B0C9-FE59000677BC}
 		{C2194623-96DB-4099-BEA4-8D286237A8A0} = {4F092423-1A99-41D6-8A3F-7FE6AA9BBF9D}
 		{6303CF3D-AA6E-4669-9AFB-D7B16E93096D} = {4F092423-1A99-41D6-8A3F-7FE6AA9BBF9D}
+		{83425C26-FC83-432F-8410-0242D8AD737C} = {3377DF4F-24AD-4E85-A155-EFDDCBDC776A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3EB73C9F-7CF9-47EE-A17B-F4C904097B91}

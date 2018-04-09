@@ -16,6 +16,6 @@ namespace CryptoPortfolio.Business.Builder.Interfaces.CryptoPortfolio
 
         bool UpdateApiInformation(ApiInformation api);
 
-        bool DeleteApiInformation(ApiInformation api);
+        bool DeleteApiInformation(string apiId);
     }
 }
