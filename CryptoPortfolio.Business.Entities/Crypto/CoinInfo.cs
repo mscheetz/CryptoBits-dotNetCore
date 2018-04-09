@@ -5,14 +5,10 @@ using System.Text;
 
 namespace CryptoPortfolio.Business.Entities.Crypto
 {
-    public class CoinInfo
+    public class CoinInfo : Entity
     {
-        [BsonId]
-        public string Id { get; set; }
-        public string name { get; set; }
         public string symbol { get; set; }
-        public double btcPrice { get; set; }
-        public long lastUpdate { get; set; }
-        public HashSet<string> exchangeSet { get; set; }
+        public string name { get; set; }
+        public List<Wallet> walletList { get; set; }
     }
 }
