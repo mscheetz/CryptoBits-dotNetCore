@@ -44,12 +44,16 @@ namespace CryptoPortfolio.WebApi
             services.AddMvc();
 
             services.AddScoped<IApiInformationRepository, ApiInformationRepository>();
-            services.AddScoped<IBalanceRepository, BalanceRepository>();
-            services.AddTransient<IBalanceRepository, BalanceRepository>();
-            services.AddTransient<ICryptoValueRepository, CryptoValueRepository>();
-            services.AddTransient<ITransactionRepository, TransactionRepository>();
+            services.AddScoped<ICoinInfoRepository, CoinInfoRepository>();
+            services.AddScoped<ITransactionRepository, TransactionRepository>();
             services.AddTransient<IApiInformationBuilder, ApiInformationBuilder>();
+            services.AddTransient<ICoinInformationBuilder, CoinInformationBuilder>();
+            services.AddTransient<ITransactionBuilder, TransactionBuilder>();
             services.AddTransient<ICryptoPortfolioService, CryptoPortfolioManager>();
+            //services.AddScoped<IBalanceRepository, BalanceRepository>();
+            //services.AddTransient<IBalanceRepository, BalanceRepository>();
+            //services.AddTransient<ICryptoValueRepository, CryptoValueRepository>();
+            //services.AddTransient<ITransactionRepository, TransactionRepository>();
 
             services.AddSwaggerGen(c =>
             {

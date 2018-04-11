@@ -27,6 +27,22 @@ namespace CryptoPortfolio.Business.Builder.Mapping
                 .ForMember(c => c.symbol, map => map.MapFrom(e => e.symbol))
                 .ForMember(c => c.total_supply, map => map.MapFrom(e => e.total_supply));
 
+            CreateMap<Entities.CoinMarketCap.Coin, Entities.Crypto.CMCCoin>()
+                .ForMember(c => c.available_supply, map => map.MapFrom(e => e.available_supply))
+                .ForMember(c => c.id, map => map.MapFrom(e => e.id))
+                .ForMember(c => c.last_updated, map => map.MapFrom(e => e.last_updated))
+                .ForMember(c => c.market_cap_usd, map => map.MapFrom(e => e.market_cap_usd))
+                .ForMember(c => c.max_supply, map => map.MapFrom(e => e.max_supply))
+                .ForMember(c => c.name, map => map.MapFrom(e => e.name))
+                .ForMember(c => c.percent_change_1h, map => map.MapFrom(e => e.percent_change_1h))
+                .ForMember(c => c.percent_change_24h, map => map.MapFrom(e => e.percent_change_24h))
+                .ForMember(c => c.percent_change_7d, map => map.MapFrom(e => e.percent_change_7d))
+                .ForMember(c => c.price_btc, map => map.MapFrom(e => e.price_btc))
+                .ForMember(c => c.price_usd, map => map.MapFrom(e => e.price_usd))
+                .ForMember(c => c.rank, map => map.MapFrom(e => e.rank))
+                .ForMember(c => c.symbol, map => map.MapFrom(e => e.symbol))
+                .ForMember(c => c.total_supply, map => map.MapFrom(e => e.total_supply));
+
             CreateMap<Entities.Coindar.CalendarItem, Event>()
                 .ForMember(c => c.caption, map => map.MapFrom(e => e.caption))
                 .ForMember(c => c.coinName, map => map.MapFrom(e => e.coin_name))
@@ -80,6 +96,24 @@ namespace CryptoPortfolio.Business.Builder.Mapping
             CreateMap<Entities.Crypto.Address, Address>()
                 .ForMember(c => c.addressId, map => map.MapFrom(e => e.addressId))
                 .ForMember(c => c.addressName, map => map.MapFrom(e => e.addressName));
+
+            CreateMap<Entities.Crypto.Transaction, Transaction>()
+                .ForMember(c => c.clientOrderId, map => map.MapFrom(e => e.clientOrderId))
+                .ForMember(c => c.exchange, map => map.MapFrom(e => e.exchange))
+                .ForMember(c => c.executedQty, map => map.MapFrom(e => e.executedQty))
+                .ForMember(c => c.icebergQty, map => map.MapFrom(e => e.icebergQty))
+                .ForMember(c => c.Id, map => map.MapFrom(e => e.Id))
+                .ForMember(c => c.isWorking, map => map.MapFrom(e => e.isWorking))
+                .ForMember(c => c.orderId, map => map.MapFrom(e => e.orderId))
+                .ForMember(c => c.origQty, map => map.MapFrom(e => e.origQty))
+                .ForMember(c => c.price, map => map.MapFrom(e => e.price))
+                .ForMember(c => c.side, map => map.MapFrom(e => e.side))
+                .ForMember(c => c.status, map => map.MapFrom(e => e.status))
+                .ForMember(c => c.stopPrice, map => map.MapFrom(e => e.stopPrice))
+                .ForMember(c => c.symbol, map => map.MapFrom(e => e.symbol))
+                .ForMember(c => c.time, map => map.MapFrom(e => e.time))
+                .ForMember(c => c.timeInForce, map => map.MapFrom(e => e.timeInForce))
+                .ForMember(c => c.type, map => map.MapFrom(e => e.type));
         }
     }
 }

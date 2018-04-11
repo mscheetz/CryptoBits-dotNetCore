@@ -48,6 +48,14 @@ namespace CryptoPortfolio.Data
             }
         }
 
+        public IMongoCollection<CMCCoin> CMCCoin
+        {
+            get
+            {
+                return _database.GetCollection<CMCCoin>("CMCCoin");
+            }
+        }
+
         public IMongoCollection<CoinInfo> CoinInfo
         {
             get

@@ -8,22 +8,38 @@ using System.Collections.Generic;
 using System.Text;
 using CryptoPortfolio.Business.Helper;
 using System.Linq;
+using CryptoPortfolio.Data.Interfaces;
 
 namespace CryptoPortfolio.Business.Builder.Sources
 {
     public class CoinMarketCapBuilder : ICoinMarketCapBuilder
     {
-        private ICoinMarketCapRepository _repo;
+        private ICoinMarketCapRepository _cmcRepo;
+        private ICMCCoinRepository _coinRepo;
         private ObjectHelper _helper;
+        private DateTimeHelper _dtHelper;
         private DateTime? lastRun;
         private DateTime currentTime;
         private List<CMCCoin> _coinList;
 
-        public CoinMarketCapBuilder()
+        public CoinMarketCapBuilder(ICMCCoinRepository cMCCoinRepository)
         {
-            _repo = new CoinMarketCapRepository();
+            _coinRepo = cMCCoinRepository;
+            _cmcRepo = new CoinMarketCapRepository();
             this._helper = new ObjectHelper();
+            this._dtHelper = new DateTimeHelper();
             this.lastRun = null;
+        }
+
+        public void GetCoinsFromDB()
+        {
+            var entityList = _coinRepo.GetCMCCoins().Result.ToList();
+            var lastUpdate = entityList == null ? string.Empty : entityList.Select(e => e.last_updated).First();
+
+            if (lastUpdate == string.Empty || _helper.CompareSeconds(new DateTime(Convert.ToInt64(lastUpdate))) < 1000)
+            {
+                SetCoins();
+            }
         }
 
         /// <summary>
@@ -93,11 +109,17 @@ namespace CryptoPortfolio.Business.Builder.Sources
         /// </summary>
         private void SetCoins()
         {
-            var coinEntityList = _repo.GetCoins().Result;
+            var coinEntityList = _cmcRepo.GetCoins().Result;
 
             this.lastRun = DateTime.UtcNow;
 
             this._coinList = GetContractList(coinEntityList);
+
+            _coinRepo.DeleteAllRecords();
+
+            var dbEntityList = ApiEntityListToDbEntityList(coinEntityList);
+
+            _coinRepo.InsertCMCCoins(dbEntityList);
         }
 
         /// <summary>
@@ -106,7 +128,7 @@ namespace CryptoPortfolio.Business.Builder.Sources
         /// <param name="name"></param>
         private void SetCoin(string name)
         {
-            var coinEntity = _repo.GetCoin(name).Result;
+            var coinEntity = _cmcRepo.GetCoin(name).Result;
 
             this.lastRun = DateTime.UtcNow;
 
@@ -122,6 +144,11 @@ namespace CryptoPortfolio.Business.Builder.Sources
             {
                 _coinList[index] = coin;
             }
+        }
+
+        private List<Entities.Crypto.CMCCoin> ApiEntityListToDbEntityList(IEnumerable<Entities.CoinMarketCap.Coin> entityList)
+        {
+            return this._helper.CreateEntity<IEnumerable<Entities.CoinMarketCap.Coin>, List<Entities.Crypto.CMCCoin>>(entityList);
         }
 
         /// <summary>
