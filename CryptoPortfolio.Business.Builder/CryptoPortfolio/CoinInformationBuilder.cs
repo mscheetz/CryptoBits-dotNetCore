@@ -47,10 +47,9 @@ namespace CryptoPortfolio.Business.Builder.CryptoPortfolio
         public bool NewTransaction(Contracts.CryptoBits.NewTransaction transaction)
         {
             this.newTransaction = transaction;
-
-            //TODO: push to transaction log
-
+            
             var newCoin = GetCoin(transaction);
+
             UpdateCoinInformation(newCoin);
 
             var foundCoin = this.coinInfoList.FirstOrDefault(c => c.symbol.Equals(newCoin.symbol));

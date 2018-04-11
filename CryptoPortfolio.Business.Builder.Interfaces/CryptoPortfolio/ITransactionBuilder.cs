@@ -6,15 +6,19 @@ namespace CryptoPortfolio.Business.Builder.Interfaces.CryptoPortfolio
 {
     public interface ITransactionBuilder
     {
+        IEnumerable<Transaction> GetTransactions();
+
         IEnumerable<Transaction> GetTransactionBySymbol(string symbol);
 
         IEnumerable<Transaction> GetTransactionByLocation(string location);
 
-        IEnumerable<Transaction> GetTransaction(string symbol, string location);
+        IEnumerable<Transaction> GetTransactionsBySymbolAndLocation(string symbol, string location);
 
         IEnumerable<Transaction> GetTransactionsByDate(DateTime from);
 
         IEnumerable<Transaction> GetTransactionsByDate(DateTime from, DateTime to);
+
+        bool AddNewTransaction(NewTransaction newTransaction);
 
         bool AddTransaction(Transaction newTransaction);
 
