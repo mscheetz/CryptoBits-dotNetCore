@@ -18,12 +18,7 @@ namespace CryptoPortfolio.Data
         {
             _context = new CryptoPortfolioContext(settings);
         }
-
-        //public ApiInformationRepository()
-        //{
-        //    this._context = base.GetContext();
-        //}
-
+        
         public async Task<IEnumerable<ApiInformation>> GetApiInfo()
         {
             try

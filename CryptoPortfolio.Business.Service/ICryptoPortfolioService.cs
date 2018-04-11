@@ -19,6 +19,8 @@ namespace CryptoPortfolio.Business.Service
 
         IEnumerable<DisplayCoin> PostTransaction(NewTransaction transaction);
 
+        IEnumerable<Transaction> GetTransactions();
+
         IEnumerable<DisplayCoin> GetDisplayCoins();
         
         DisplayCoin GetDisplayCoin(string symbol);

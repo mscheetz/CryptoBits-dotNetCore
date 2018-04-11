@@ -22,8 +22,9 @@ namespace CryptoPortfolio.Business.Manager
         private ICoinInformationBuilder _coinInfoBldr;
         private IDisplayCoinBuilder _displayCoinBldr;
         private IApiInformationBuilder _apiBldr;
+        private ITransactionBuilder _trxBldr;
 
-        public CryptoPortfolioManager(IApiInformationBuilder apiInformationBuilder, ICoinInformationBuilder coinInfoBuilder)
+        public CryptoPortfolioManager(IApiInformationBuilder apiInformationBuilder, ICoinInformationBuilder coinInfoBuilder, ITransactionBuilder transactionBuilder)
         {
             this._nnBldr = new NinetyNineCryptoBuilder();
             this._coindarBldr = new CoindarBuilder();
@@ -31,6 +32,7 @@ namespace CryptoPortfolio.Business.Manager
             this._coinInfoBldr = coinInfoBuilder;
             this._displayCoinBldr = new DisplayCoinBuilder(coinInfoBuilder);
             this._apiBldr = apiInformationBuilder;
+            this._trxBldr = transactionBuilder;
         }
 
         public IEnumerable<Coin> GetCoins()
@@ -60,7 +62,15 @@ namespace CryptoPortfolio.Business.Manager
 
         public IEnumerable<DisplayCoin> PostTransaction(NewTransaction transaction)
         {
-            var status = this._coinInfoBldr.NewTransaction(transaction);
+            var status = this._trxBldr.AddNewTransaction(transaction);
+
+            if(!status)
+            {
+                // TODO: Throw error
+                return new List<DisplayCoin>();
+            }
+
+            status = this._coinInfoBldr.NewTransaction(transaction);
 
             if (status)
             {
@@ -71,6 +81,11 @@ namespace CryptoPortfolio.Business.Manager
                 // TODO: Throw error
                 return new List<DisplayCoin>();
             }
+        }
+
+        public IEnumerable<Transaction> GetTransactions()
+        {
+            return this._trxBldr.GetTransactions();
         }
 
         public IEnumerable<DisplayCoin> GetDisplayCoins()

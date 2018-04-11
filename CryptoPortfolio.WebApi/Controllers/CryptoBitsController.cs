@@ -16,15 +16,15 @@ namespace CryptoPortfolio.WebApi.Controllers
         {
             this._service = service;
         }
-
+        
         // GET: api/cryptobits/status
-        [HttpGet]
+        [HttpGet("status")]
         public bool GetServiceStatus()
         {
             return true;
         }
 
-        // GET: api/cryptobits
+        // GET: api/cryptobits/coins
         [HttpGet("coins")]
         public IEnumerable<Coin> GetCoins()
         {
@@ -64,6 +64,13 @@ namespace CryptoPortfolio.WebApi.Controllers
         public IEnumerable<DisplayCoin> PostTransaction([FromBody]NewTransaction transaction)
         {
             return this._service.PostTransaction(transaction);
+        }
+
+        // GET: api/cryptobits/transaction
+        [HttpGet("transaction")]
+        public IEnumerable<Transaction> GetTransactions()
+        {
+            return this._service.GetTransactions();
         }
 
         // GET: api/cryptobits/displaycoin

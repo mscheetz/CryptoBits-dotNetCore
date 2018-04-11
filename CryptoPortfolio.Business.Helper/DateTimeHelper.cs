@@ -27,9 +27,28 @@ namespace CryptoPortfolio.Business.Helper
             return result.ToLocalTime();
         }
 
+        public long LocalToUnixTime(DateTime localTime)
+        {
+            var utcTime = localTime.ToUniversalTime();
+
+            return UTCtoUnixTime(utcTime);
+        }
+
         public long UTCtoUnixTime(DateTime utcTimestamp)
         {
             return ((utcTimestamp.Ticks - epochTicks) / TimeSpan.TicksPerSecond);
+        }
+
+        /// <summary>
+        /// Get seconds from a timestamp to now
+        /// </summary>
+        /// <param name="timeStart">DateTime to compare</param>
+        /// <returns>Double of seconds</returns>
+        public double CompareSeconds(DateTime timeStart)
+        {
+            var timeNow = DateTime.UtcNow;
+
+            return (timeStart - timeNow).TotalSeconds;
         }
     }
 }
