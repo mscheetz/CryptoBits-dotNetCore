@@ -9,6 +9,7 @@ using System.Text;
 using CryptoPortfolio.Business.Helper;
 using System.Linq;
 using CryptoPortfolio.Data.Interfaces;
+using System.Globalization;
 
 namespace CryptoPortfolio.Business.Builder.Sources
 {
@@ -19,9 +20,12 @@ namespace CryptoPortfolio.Business.Builder.Sources
         private ObjectHelper _helper;
         private DateTimeHelper _dtHelper;
         private DateTime? lastRun;
-        private DateTime currentTime;
         private List<CMCCoin> _coinList;
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="cMCCoinRepository">Repository Interface</param>
         public CoinMarketCapBuilder(ICMCCoinRepository cMCCoinRepository)
         {
             _coinRepo = cMCCoinRepository;
@@ -29,14 +33,23 @@ namespace CryptoPortfolio.Business.Builder.Sources
             this._helper = new ObjectHelper();
             this._dtHelper = new DateTimeHelper();
             this.lastRun = null;
+            LoadCoinsFromDB();
         }
 
-        public void GetCoinsFromDB()
+        /// <summary>
+        /// Load CMC coins from database
+        /// </summary>
+        public void LoadCoinsFromDB()
         {
             var entityList = _coinRepo.GetCMCCoins().Result.ToList();
-            var lastUpdate = entityList == null ? string.Empty : entityList.Select(e => e.last_updated).First();
 
-            if (lastUpdate == string.Empty || _helper.CompareSeconds(new DateTime(Convert.ToInt64(lastUpdate))) < 1000)
+            _coinList = GetContractListFromDbEntityList(entityList);
+
+            string lastRunDate = entityList == null || entityList.Count == 0 ? null : entityList.Select(e => e.last_imported).First();
+
+            lastRun = lastRunDate == null ? null : _dtHelper.UnixTimeToUTC(lastRunDate);
+            
+            if(RunSetter())
             {
                 SetCoins();
             }
@@ -96,7 +109,7 @@ namespace CryptoPortfolio.Business.Builder.Sources
         /// <returns>Bool of result</returns>
         private bool RunSetter()
         {
-            if (lastRun == null || _helper.CompareSeconds((DateTime)lastRun) >= 30)
+            if (lastRun == null || _dtHelper.CompareSeconds((DateTime)lastRun) <= -1000)
             {
                 return true;
             }
@@ -111,15 +124,33 @@ namespace CryptoPortfolio.Business.Builder.Sources
         {
             var coinEntityList = _cmcRepo.GetCoins().Result;
 
-            this.lastRun = DateTime.UtcNow;
+            var lastRunUnix = _dtHelper.UTCtoUnixTime();
 
-            this._coinList = GetContractList(coinEntityList);
+            this.lastRun = _dtHelper.UnixTimeToUTC(lastRunUnix);
+
+            this._coinList = GetContractListFromApiEntityList(coinEntityList);
+
+            UpdateDbCoins(coinEntityList, lastRunUnix);
+        }
+
+        /// <summary>
+        /// Update coin list in database
+        /// </summary>
+        /// <param name="entityList">Collection of API Entities</param>
+        /// <param name="unixTimeStamp">Current unix timestamp</param>
+        private void UpdateDbCoins(IEnumerable<Entities.CoinMarketCap.Coin> entityList, long unixTimeStamp)
+        {
+            var dbEntityList = ApiEntityListToDbEntityList(entityList);
 
             _coinRepo.DeleteAllRecords();
 
-            var dbEntityList = ApiEntityListToDbEntityList(coinEntityList);
+            foreach(var dbEntity in dbEntityList)
+            {
+                dbEntity.last_imported = unixTimeStamp.ToString();
+            }
 
             _coinRepo.InsertCMCCoins(dbEntityList);
+
         }
 
         /// <summary>
@@ -146,11 +177,16 @@ namespace CryptoPortfolio.Business.Builder.Sources
             }
         }
 
+        /// <summary>
+        /// Convert Api Entity list to DB Entity List
+        /// </summary>
+        /// <param name="entityList">Api Entity list to convert</param>
+        /// <returns>Collection of DB Entity objects</returns>
         private List<Entities.Crypto.CMCCoin> ApiEntityListToDbEntityList(IEnumerable<Entities.CoinMarketCap.Coin> entityList)
         {
             return this._helper.CreateEntity<IEnumerable<Entities.CoinMarketCap.Coin>, List<Entities.Crypto.CMCCoin>>(entityList);
         }
-
+        
         /// <summary>
         /// Conver entity object to contract object
         /// </summary>
@@ -166,9 +202,19 @@ namespace CryptoPortfolio.Business.Builder.Sources
         /// </summary>
         /// <param name="entityList">Entity collection to convert</param>
         /// <returns>Collection of CMCCoin objects</returns>
-        private List<CMCCoin> GetContractList(IEnumerable<Entities.CoinMarketCap.Coin> entityList)
+        private List<CMCCoin> GetContractListFromApiEntityList(IEnumerable<Entities.CoinMarketCap.Coin> entityList)
         {
             return this._helper.CreateContract<IEnumerable<Entities.CoinMarketCap.Coin>, List<CMCCoin>>(entityList);
+        }
+
+        /// <summary>
+        /// Convert entity collection to contract collection
+        /// </summary>
+        /// <param name="entityList">Entity collection to convert</param>
+        /// <returns>Collection of CMCCoin objects</returns>
+        private List<CMCCoin> GetContractListFromDbEntityList(IEnumerable<Entities.Crypto.CMCCoin> entityList)
+        {
+            return this._helper.CreateContract<IEnumerable<Entities.Crypto.CMCCoin>, List<CMCCoin>>(entityList);
         }
     }
 }
