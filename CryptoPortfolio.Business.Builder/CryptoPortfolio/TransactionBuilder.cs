@@ -88,25 +88,24 @@ namespace CryptoPortfolio.Business.Builder.CryptoPortfolio
         {
             var result = _repo.AddTransaction(entity);
 
-            if (result.IsCompleted)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return result.IsCompleted ? true : false;
         }
 
-        public bool AddTransactions(List<Contracts.CryptoBits.Transaction> transactions)
+        public bool AddTransactions(IEnumerable<Entities.Crypto.Transaction> entities)
         {
-            var entityList = GetEntityList(transactions);
-            foreach(var entity in entityList)
-            {
-                _repo.AddTransaction(entity);
-            }
+            var result = _repo.AddTransactions(entities);
 
-            return true;
+            return result.IsCompleted ? true : false;
+        }
+
+
+        public bool AddTransactions(IEnumerable<Contracts.CryptoBits.Transaction> transactions)
+        {
+            var entityList = GetEntityList(transactions.ToList());
+
+            var result = AddTransactions(entityList);
+
+            return result;
         }
         
         public bool UpdateTransaction(Contracts.CryptoBits.Transaction transaction)
