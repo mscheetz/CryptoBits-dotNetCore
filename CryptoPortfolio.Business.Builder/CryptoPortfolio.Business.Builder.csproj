@@ -11,6 +11,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CryptoPortfolio.Business.Builder.Interfaces\CryptoPortfolio.Business.Builder.Interfaces.csproj" />
     <ProjectReference Include="..\CryptoPortfolio.Business.Contracts\CryptoPortfolio.Business.Contracts.csproj" />
+    <ProjectReference Include="..\CryptoPortfolio.Business.Entities\CryptoPortfolio.Business.Entities.csproj" />
     <ProjectReference Include="..\CryptoPortfolio.Data.Interfaces\CryptoPortfolio.Data.Interfaces.csproj" />
     <ProjectReference Include="..\CryptoPortfolio.Data\CryptoPortfolio.Data.csproj" />
   </ItemGroup>
