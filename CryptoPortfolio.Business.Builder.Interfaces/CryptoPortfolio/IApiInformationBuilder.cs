@@ -12,6 +12,8 @@ namespace CryptoPortfolio.Business.Builder.Interfaces.CryptoPortfolio
 
         ApiInformation GetApiInformation(string apiName);
 
+        Entities.ApiInformation GetApiInformationEntity(string apiName);
+
         bool AddApiInformation(ApiInformation api);
 
         bool UpdateApiInformation(ApiInformation api);

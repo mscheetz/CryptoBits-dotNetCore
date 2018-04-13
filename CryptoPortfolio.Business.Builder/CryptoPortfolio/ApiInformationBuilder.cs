@@ -4,6 +4,7 @@ using CryptoPortfolio.Business.Helper;
 using CryptoPortfolio.Data;
 using CryptoPortfolio.Data.Interfaces;
 using Microsoft.Extensions.Options;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -24,13 +25,26 @@ namespace CryptoPortfolio.Business.Builder.CryptoPortfolio
 
         public bool SetApiInformation()
         {
-            var apiEntityList = _repo.GetApiInfo().Result.ToList();
+            var apiEntityList = GetApiInformationFromDB();
             
-            _apiInfoList = GetContractList(apiEntityList);
+            _apiInfoList = GetContractList(apiEntityList.ToList());
             
+            foreach(var api in _apiInfoList)
+            {
+                api.apiSecret = "****secret****";
+                api.extraValue = "****secret****";
+            }
+
             return true;
         }
         
+        private IEnumerable<Entities.ApiInformation> GetApiInformationFromDB()
+        {
+            var apiEntityList = _repo.GetApiInfo().Result.ToList();
+
+            return apiEntityList;
+        }
+
         public IEnumerable<Contracts.CryptoBits.ApiInformation> GetApiInformation()
         {
             if( _apiInfoList.Count == 0)
@@ -42,11 +56,24 @@ namespace CryptoPortfolio.Business.Builder.CryptoPortfolio
 
         public Contracts.CryptoBits.ApiInformation GetApiInformation(string apiName)
         {
-            return _apiInfoList.Where(a => a.apiSource.Equals(apiName)).FirstOrDefault();
+            if (_apiInfoList.Count == 0)
+            {
+                SetApiInformation();
+            }
+            return _apiInfoList.Where(a => a.apiSource.ToLower().Equals(apiName.ToLower())).FirstOrDefault();
         }
-        
+
+        public Entities.ApiInformation GetApiInformationEntity(string apiName)
+        {
+            var entityList = GetApiInformationFromDB();
+
+            return entityList.Where(a => a.apiSource.ToLower().Equals(apiName.ToLower())).FirstOrDefault();
+        }
+
         public bool AddApiInformation(Contracts.CryptoBits.ApiInformation api)
         {
+            api.lastUpdate = DateTime.UtcNow;
+
             var entity = GetEntity(api);
             var result = _repo.AddApiInfo(entity);
 
@@ -62,6 +89,8 @@ namespace CryptoPortfolio.Business.Builder.CryptoPortfolio
 
         public bool UpdateApiInformation(Contracts.CryptoBits.ApiInformation api)
         {
+            api.lastUpdate = DateTime.UtcNow;
+
             var entity = GetEntity(api);
             return _repo.UpdateApiInfo(entity).Result;
         }
