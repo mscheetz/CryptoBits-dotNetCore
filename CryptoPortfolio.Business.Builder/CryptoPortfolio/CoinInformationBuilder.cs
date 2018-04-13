@@ -43,14 +43,18 @@ namespace CryptoPortfolio.Business.Builder.CryptoPortfolio
         /// Process a new transaction from the UI
         /// </summary>
         /// <param name="transaction">NewTransaction object to process</param>
+        /// <param name="updateCoin">Update coin in database? (default = true)</param>
         /// <returns>boolean when complete</returns>
-        public bool NewTransaction(Contracts.CryptoBits.NewTransaction transaction)
+        public bool NewTransaction(Contracts.CryptoBits.NewTransaction transaction, bool updateCoin = true)
         {
             this.newTransaction = transaction;
             
             var newCoin = GetCoin(transaction);
 
-            UpdateCoinInformation(newCoin);
+            if (updateCoin)
+            {
+                UpdateCoinInformation(newCoin);
+            }
 
             var foundCoin = this.coinInfoList.FirstOrDefault(c => c.symbol.Equals(newCoin.symbol));
 
@@ -61,6 +65,35 @@ namespace CryptoPortfolio.Business.Builder.CryptoPortfolio
             else
             {
                 foundCoin.walletList = newCoin.walletList;
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        /// Process new transactions from an exchange
+        /// </summary>
+        /// <param name="transactionList">Collection of transactions to process</param>
+        /// <returns>boolean when complete</returns>
+        public bool NewTransactions(IEnumerable<Entities.Crypto.Transaction> transactionList)
+        {
+            var newTrxList = GetNewTransactionListFromEntityList(transactionList);
+
+            foreach(var newTrx in newTrxList)
+            {
+                var tradingPair = _objectHelper.GetTradingPair(newTrx.pair);
+
+                newTrx.pair = tradingPair.pair;
+                newTrx.symbol = tradingPair.symbol;
+
+                NewTransaction(newTrx, false);
+            }
+
+            var coinUpdateList = this.coinInfoList.Where(c => newTrxList.Any(n => n.symbol == c.symbol));
+
+            foreach(var coin in coinUpdateList)
+            {
+                UpdateCoinInformation(coin);
             }
 
             return true;
@@ -279,7 +312,12 @@ namespace CryptoPortfolio.Business.Builder.CryptoPortfolio
 
         private List<CoinInformation> GetContractList(List<Entities.Crypto.CoinInfo> entityList)
         {
-            return _objectHelper.CreateContract< List<Entities.Crypto.CoinInfo>, List<CoinInformation>>(entityList);
+            return _objectHelper.CreateContract<List<Entities.Crypto.CoinInfo>, List<CoinInformation>>(entityList);
+        }
+
+        private IEnumerable<NewTransaction> GetNewTransactionListFromEntityList(IEnumerable<Entities.Crypto.Transaction> transactionList)
+        {
+            return _objectHelper.CreateContract<IEnumerable<Entities.Crypto.Transaction>, IEnumerable<NewTransaction>>(transactionList);
         }
     }
 }
