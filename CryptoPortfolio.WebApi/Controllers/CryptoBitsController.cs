@@ -108,6 +108,13 @@ namespace CryptoPortfolio.WebApi.Controllers
             return this._service.PostApiInformation(apiInformation);
         }
 
+        // PUT: api/cryptobits/apiInformation
+        [HttpPut("apiInformation")]
+        public bool PutApiInformation([FromBody]ApiInformation apiInformation)
+        {
+            return this._service.PutApiInformation(apiInformation);
+        }
+
         // DELETE: api/cryptobits/apiInformation/{apiId}
         [HttpDelete("apiInformation/{apiId}")]
         public bool DeleteApiInformation(string apiId)
@@ -115,10 +122,11 @@ namespace CryptoPortfolio.WebApi.Controllers
             return this._service.DeleteApiInformation(apiId);
         }
 
-        // PUT: api/cryptobits/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        // GET: api/cryptobits/binance/transactions
+        [HttpGet("binance/transactions")]
+        public bool BinanceUpdate()
         {
+            return this._service.UpdateBinanceTransactions();
         }
         
         // DELETE: api/ApiWithActions/5

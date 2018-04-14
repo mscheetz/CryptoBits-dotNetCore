@@ -2107,6 +2107,7 @@
           "AutoMapper": "6.2.2",
           "CryptoPortfolio.Business.Builder.Interfaces": "1.0.0",
           "CryptoPortfolio.Business.Contracts": "1.0.0",
+          "CryptoPortfolio.Business.Entities": "1.0.0",
           "CryptoPortfolio.Data": "1.0.0",
           "CryptoPortfolio.Data.Interfaces": "1.0.0"
         },
@@ -2121,7 +2122,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.0",
         "dependencies": {
-          "CryptoPortfolio.Business.Contracts": "1.0.0"
+          "CryptoPortfolio.Business.Contracts": "1.0.0",
+          "CryptoPortfolio.Business.Entities": "1.0.0"
         },
         "compile": {
           "bin/placeholder/CryptoPortfolio.Business.Builder.Interfaces.dll": {}
@@ -2160,6 +2162,7 @@
         "framework": ".NETCoreApp,Version=v2.0",
         "dependencies": {
           "AutoMapper": "6.2.2",
+          "CryptoPortfolio.Business.Contracts": "1.0.0",
           "Microsoft.NETCore": "5.0.0",
           "MongoDB.Driver.Core": "2.5.0"
         },

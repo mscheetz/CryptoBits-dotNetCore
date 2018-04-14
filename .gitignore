@@ -19,6 +19,10 @@
 /CryptoPortfolio.Data/bin
 /CryptoPortfolio.Data.Interfaces/obj
 /CryptoPortfolio.Data.Interfaces/bin
+/CryptoPortfolio.Data.Core/obj
+/CryptoPortfolio.Data.Core/bin
+/CryptoPortfolio.Data.Core.Interfaces/obj
+/CryptoPortfolio.Data.Core.Interfaces/bin
 /CryptoPortfolio.Data.Tests/obj
 /CryptoPortfolio.Data.Tests/bin
 /CryptoPortfolio.Tests.Objects/bin

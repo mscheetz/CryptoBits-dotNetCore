@@ -11,7 +11,7 @@ namespace CryptoPortfolio.Data.Interfaces
     {
         bool SetExchangeApi(ApiInformation exchangeApi);
 
-        Task<Transaction> GetTransactions();
+        Task<IEnumerable<Transaction>> GetTransactions();
 
         Task<Account> GetBalance();
 

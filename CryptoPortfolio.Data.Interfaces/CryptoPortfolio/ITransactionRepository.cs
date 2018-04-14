@@ -24,6 +24,8 @@ namespace CryptoPortfolio.Data.Interfaces
 
         Task AddTransaction(Transaction transaction);
 
+        Task AddTransactions(IEnumerable<Transaction> transactions);
+
         Task<bool> UpdateTransaction(Transaction transaction);
     }
 }
