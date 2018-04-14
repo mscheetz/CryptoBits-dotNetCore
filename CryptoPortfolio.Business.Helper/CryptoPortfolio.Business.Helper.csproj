@@ -10,4 +10,8 @@
     <PackageReference Include="MongoDB.Driver.Core" Version="2.5.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CryptoPortfolio.Business.Contracts\CryptoPortfolio.Business.Contracts.csproj" />
+  </ItemGroup>
+
 </Project>

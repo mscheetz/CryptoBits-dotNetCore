@@ -13,6 +13,11 @@ namespace CryptoPortfolio.Business.Helper
         {
         }
 
+        /// <summary>
+        /// Convert unix timestamp to UTC DateTime
+        /// </summary>
+        /// <param name="unixTime">Unix Timestamp</param>
+        /// <returns>DateTime object</returns>
         public DateTime UnixTimeToUTC(long unixTime)
         {
             var result = epoch.AddSeconds(unixTime);
@@ -20,6 +25,28 @@ namespace CryptoPortfolio.Business.Helper
             return result;
         }
 
+        /// <summary>
+        /// Convert string of unix timestamp to UTC DateTime
+        /// </summary>
+        /// <param name="unixTime">string of Unix Timestamp</param>
+        /// <returns>DateTime object</returns>
+        public DateTime? UnixTimeToUTC(string unixTime)
+        {
+            if (string.IsNullOrEmpty(unixTime))
+                return null;
+
+            long unixTimeInt = Int64.Parse(unixTime);
+
+            var result = UnixTimeToUTC(unixTimeInt);
+
+            return result;
+        }
+
+        /// <summary>
+        /// Convert unix timestamp to Local DateTime
+        /// </summary>
+        /// <param name="unixTime">Unix Timestamp</param>
+        /// <returns>DateTime object</returns>
         public DateTime UnixTimeToLocal(long unixTime)
         {
             var result = epoch.AddSeconds(unixTime);
@@ -27,6 +54,11 @@ namespace CryptoPortfolio.Business.Helper
             return result.ToLocalTime();
         }
 
+        /// <summary>
+        /// Convert Local DateTime to unix timestamp
+        /// </summary>
+        /// <param name="localTime">Local DateTime object</param>
+        /// <returns>unix timestamp</returns>
         public long LocalToUnixTime(DateTime localTime)
         {
             var utcTime = localTime.ToUniversalTime();
@@ -34,6 +66,20 @@ namespace CryptoPortfolio.Business.Helper
             return UTCtoUnixTime(utcTime);
         }
 
+        /// <summary>
+        /// Convert current UTC DateTime to unix timestamp
+        /// </summary>
+        /// <returns>unix timestamp</returns>
+        public long UTCtoUnixTime()
+        {
+            return UTCtoUnixTime(DateTime.UtcNow);
+        }
+
+        /// <summary>
+        /// Convert UTC DateTime to unix timestamp
+        /// </summary>
+        /// <param name="localTime">UTC DateTime object</param>
+        /// <returns>unix timestamp</returns>
         public long UTCtoUnixTime(DateTime utcTimestamp)
         {
             return ((utcTimestamp.Ticks - epochTicks) / TimeSpan.TicksPerSecond);
