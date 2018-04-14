@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
+using CryptoPortfolio.Business.Contracts.CryptoBits;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace CryptoPortfolio.Business.Helper
@@ -47,15 +49,41 @@ namespace CryptoPortfolio.Business.Helper
         }
 
         /// <summary>
-        /// Get seconds from a timestamp to now
+        /// Get a collection from an enum
         /// </summary>
-        /// <param name="timeStart">DateTime to compare</param>
-        /// <returns>Double of seconds</returns>
-        public double CompareSeconds(DateTime timeStart)
+        /// <typeparam name="T">Type of enum</typeparam>
+        /// <returns>Collection of enum values</returns>
+        public IEnumerable<T> GetEnumValues<T>()
         {
-            var timeNow = DateTime.UtcNow;
+            return Enum.GetValues(typeof(T)).Cast<T>();
+        }
 
-            return (timeStart - timeNow).TotalSeconds;
+        /// <summary>
+        /// Get trading pair from a joined symbol
+        /// </summary>
+        /// <param name="symbol">Symbol to disect</param>
+        /// <returns>new TradingPair object</returns>
+        public TradingPair GetTradingPair(string symbol)
+        {
+            var thisSymbol = string.Empty;
+            var thisPair = string.Empty;
+
+            var pairEnum = GetEnumValues<Pairs>();
+
+            foreach(var pEnum in pairEnum)
+            {
+                var pair = pEnum.ToString();
+                int len = pair.Length * -1;
+
+                if (symbol.Substring(len) == pair)
+                {
+                    thisPair = pair;
+                    thisSymbol = symbol.Substring(0, symbol.Length + len);
+                    break;
+                }
+            }
+
+            return new TradingPair { pair = thisPair, symbol = thisSymbol };
         }
     }
 }
