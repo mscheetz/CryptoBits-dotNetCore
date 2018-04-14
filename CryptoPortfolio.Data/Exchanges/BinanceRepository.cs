@@ -30,11 +30,11 @@ namespace CryptoPortfolio.Data
             return true;
         }
 
-        public async Task<Transaction> GetTransactions()
+        public async Task<IEnumerable<Transaction>> GetTransactions()
         {
             string url = CreateUrl("/api/v3/allOrders");
             
-            var response = await _restRepo.GetApi<Transaction>(url, GetRequestHeaders());
+            var response = await _restRepo.GetApiStream<IEnumerable<Transaction>>(url, GetRequestHeaders());
 
             return response;
         }

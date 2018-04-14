@@ -23,16 +23,18 @@ namespace CryptoPortfolio.Business.Manager
         private IDisplayCoinBuilder _displayCoinBldr;
         private IApiInformationBuilder _apiBldr;
         private ITransactionBuilder _trxBldr;
+        private IBinanceBuilder _binanceBldr;
 
-        public CryptoPortfolioManager(IApiInformationBuilder apiInformationBuilder, ICoinInformationBuilder coinInfoBuilder, ITransactionBuilder transactionBuilder)
+        public CryptoPortfolioManager(IApiInformationBuilder apiInformationBuilder, ICoinInformationBuilder coinInfoBuilder, ITransactionBuilder transactionBuilder, ICoinMarketCapBuilder coinMarketCapBuilder)
         {
             this._nnBldr = new NinetyNineCryptoBuilder();
             this._coindarBldr = new CoindarBuilder();
-            this._cmcBldr = new CoinMarketCapBuilder();
+            this._cmcBldr = coinMarketCapBuilder;
             this._coinInfoBldr = coinInfoBuilder;
             this._displayCoinBldr = new DisplayCoinBuilder(coinInfoBuilder);
             this._apiBldr = apiInformationBuilder;
             this._trxBldr = transactionBuilder;
+            this._binanceBldr = new BinanceBuilder(transactionBuilder, apiInformationBuilder, coinInfoBuilder);
         }
 
         public IEnumerable<Coin> GetCoins()
@@ -117,9 +119,19 @@ namespace CryptoPortfolio.Business.Manager
             return _apiBldr.AddApiInformation(apiInformation);
         }
 
+        public bool PutApiInformation(ApiInformation apiInformation)
+        {
+            return _apiBldr.UpdateApiInformation(apiInformation);
+        }
+
         public bool DeleteApiInformation(string apiId)
         {
             return _apiBldr.DeleteApiInformation(apiId);
+        }
+
+        public bool UpdateBinanceTransactions()
+        {
+            return _binanceBldr.ProcessNewTransactions();
         }
     }
 }

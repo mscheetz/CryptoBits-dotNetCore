@@ -31,6 +31,10 @@ namespace CryptoPortfolio.Business.Service
 
         bool PostApiInformation(ApiInformation apiInformation);
 
+        bool PutApiInformation(ApiInformation apiInformation);
+
         bool DeleteApiInformation(string apiId);
+
+        bool UpdateBinanceTransactions();
     }
 }
