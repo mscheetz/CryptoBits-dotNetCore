@@ -35,6 +35,8 @@ namespace CryptoPortfolio.Business.Service
 
         bool DeleteApiInformation(string apiId);
 
+        IEnumerable<BinanceBalance> GetBinanceBalances(bool omitZero = false);
+
         bool UpdateBinanceTransactions();
     }
 }

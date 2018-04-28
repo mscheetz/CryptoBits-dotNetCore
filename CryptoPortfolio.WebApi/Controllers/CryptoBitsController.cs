@@ -122,6 +122,20 @@ namespace CryptoPortfolio.WebApi.Controllers
             return this._service.DeleteApiInformation(apiId);
         }
 
+        // GET: api/cryptobits/binance/balances
+        [HttpGet("binance/balances")]
+        public IEnumerable<BinanceBalance> GetBinanceBalances()
+        {
+            return this._service.GetBinanceBalances();
+        }
+
+        // GET: api/cryptobits/binance/balances
+        [HttpGet("binance/balances/nozero")]
+        public IEnumerable<BinanceBalance> GetBinanceBalancesNoZero()
+        {
+            return this._service.GetBinanceBalances(true);
+        }
+
         // GET: api/cryptobits/binance/transactions
         [HttpGet("binance/transactions")]
         public bool BinanceUpdate()

@@ -129,6 +129,16 @@ namespace CryptoPortfolio.Business.Manager
             return _apiBldr.DeleteApiInformation(apiId);
         }
 
+        public IEnumerable<BinanceBalance> GetBinanceBalances(bool omitZero = false)
+        {
+            var list = _binanceBldr.GetBinanceCoins();
+
+            if (omitZero)
+                return list.Where(l => l.free > 0 || l.locked > 0);
+
+            return list;
+        }
+
         public bool UpdateBinanceTransactions()
         {
             return _binanceBldr.ProcessNewTransactions();

@@ -43,7 +43,7 @@ namespace CryptoPortfolio.Data
         {
             string url = CreateUrl("/api/v3/account");
             
-            var response = await _restRepo.GetApi<Account>(url, GetRequestHeaders());
+            var response = await _restRepo.GetApiStream<Account>(url, GetRequestHeaders());
 
             return response;
         }

@@ -45,6 +45,21 @@ namespace CryptoPortfolio.Business.Builder.Sources
         }
         
         /// <summary>
+        /// Get current balances for account
+        /// </summary>
+        /// <returns>Collection of BinanceBalance objects</returns>
+        public IEnumerable<BinanceBalance> GetBinanceCoins()
+        {
+            SetupExchangeRepo();
+
+            var account = _binanceRepo.GetBalance().Result;
+
+            var balanceList = _helper.CreateContract<List<Business.Entities.Binance.Balance>, List<BinanceBalance>>(account.balances);
+
+            return balanceList;
+        }
+        
+        /// <summary>
         /// Process new transactions
         /// </summary>
         /// <returns>Boolean value of result</returns>
@@ -74,7 +89,7 @@ namespace CryptoPortfolio.Business.Builder.Sources
 
             _binanceRepo.SetExchangeApi(apiEntity);
         }
-        
+
         private IEnumerable<Contracts.CryptoBits.Transaction> GetDBTransactions()
         {
             var dbTransactionList = _trxBldr.GetTransactionByLocation(thisLocation);
