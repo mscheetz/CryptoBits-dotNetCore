@@ -24,11 +24,14 @@ namespace CryptoPortfolio.Business.Helper
 
         public string GetHMACSignature(string secretKey, string totalParams)
         {
-            var paramBytes = Encoding.UTF8.GetBytes(totalParams);
-            var keyBytes = Encoding.UTF8.GetBytes(secretKey);
-            var hash = new HMACSHA256(keyBytes);
-            var computedHash = hash.ComputeHash(paramBytes);
-            return BitConverter.ToString(computedHash).Replace("-", "").ToLower();
+            ASCIIEncoding encoding = new ASCIIEncoding();
+            byte[] keyBytes = encoding.GetBytes(secretKey);
+            byte[] messageBytes = encoding.GetBytes(totalParams);
+            HMACSHA256 crypotgrapher = new HMACSHA256(keyBytes);
+
+            byte[] bytes = crypotgrapher.ComputeHash(messageBytes);
+
+            return BitConverter.ToString(bytes).Replace("-", "").ToLower();
         }
 
         public string GetKuCoinHMCACSignature(string secretKey, string totalParams)
