@@ -155,6 +155,11 @@ namespace CryptoPortfolio.Business.Builder.Mapping
                 .ForMember(n => n.symbol, map => map.MapFrom(t => t.symbol))
                 .ForMember(n => n.pair, map => map.MapFrom(t => t.symbol))
                 .ForMember(n => n.price, map => map.MapFrom(t => t.price));
+
+            CreateMap<Entities.Binance.Balance, BinanceBalance>()
+                .ForMember(c => c.symbol, map => map.MapFrom(e => e.asset))
+                .ForMember(c => c.free, map => map.MapFrom(e => e.free))
+                .ForMember(c => c.locked, map => map.MapFrom(e => e.locked));
         }
     }
 }
